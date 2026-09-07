@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}{{ publication.titre }} - EMPD{% endblock %}
+{% block content %}
+<div class="card card-koi p-4">
+  <div class="small text-muted mb-2">Publié le {{ publication.date_creation|date:"d F Y à H:i" }}  {{ publication.auteur_nom }}</div>
+  <h2>{{ publication.titre }}</h2>
+  {% if publication.image %}<img src="{{ publication.image.url }}" class="img-fluid rounded my-3">{% endif %}
+  <p style="white-space: pre-line;">{{ publication.contenu }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}{{ formation.titre }} EMPD{% endblock %}
+{% block content %}
+<div class="card card-koi p-4">
+  <span class="badge badge-formation mb-2 align-self-start">{{ formation.get_type_formation_display }}</span>
+  <h2>{{ formation.titre }}</h2>
+  {% if formation.miniature %}<img src="{{ formation.miniature.url }}" class="img-fluid rounded my-3" style="max-height:320px;object-fit:cover;">{% endif %}
+  <p style="white-space: pre-line;">{{ formation.description }}</p>
+  <a href="{% url 'formations:telecharger' formation.pk %}" class="btn btn-koi-primary mt-2 align-self-start">
+    <i class="bi bi-download"></i> Télécharger
+  </a>
+</div>
+{% endblock %}
