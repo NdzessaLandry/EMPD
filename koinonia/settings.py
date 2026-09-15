@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get(
 
 DEBUG = os.environ.get("DJANGO_DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = ['businesspartnership.pythonanywhere.com']
+ALLOWED_HOSTS = ['empd-a1gz.onrender.com','businesspartnership.pythonanywhere.com']
 
 INSTALLED_APPS = [
     "django.contrib.admin",
