@@ -1,16 +1,17 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Publications  EMPD{% endblock %}
+{% block title %}{% trans "Publications" %}  EMPD{% endblock %}
 
 {% block content %}
 
 <section class="section-empd">
 
     <div class="page-header">
-        <span class="eyebrow">À découvrir</span>
-        <h1>Publications</h1>
+        <span class="eyebrow">{% trans "À découvrir" %}</span>
+        <h1>{% trans "Publications" %}</h1>
         <p class="lead">
-            Articles et réflexions pour approfondir votre étude des Écritures.
+            {% blocktrans %}Articles et réflexions pour approfondir votre étude des Écritures.{% endblocktrans %}
         </p>
     </div>
 
@@ -35,25 +36,25 @@
             <p>{{ pub.contenu|truncatewords:35 }}</p>
 
             <a href="{% url 'publications:publication_detail' pub.pk %}" class="text-link">
-                Lire la suite
+                {% trans "Lire la suite" %}
                 <i class="bi bi-arrow-right"></i>
             </a>
 
         </article>
     {% empty %}
         <div class="empty-state">
-            Aucune publication pour le moment.
+            {% trans "Aucune publication pour le moment." %}
         </div>
     {% endfor %}
 
     {% if is_paginated %}
-        <nav aria-label="Pagination des publications">
+        <nav aria-label="{% trans "Pagination des publications" %}">
             <ul class="pagination-empd">
                 {% if page_obj.has_previous %}
-                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>
+                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Précédent" %}</a></li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>
+                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Suivant" %}</a></li>
                 {% endif %}
             </ul>
         </nav>

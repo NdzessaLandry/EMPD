@@ -1,0 +1,417 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-24 09:28+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\koinonia\settings.py:90
+msgid "Français"
+msgstr ""
+
+#: .\koinonia\settings.py:91
+msgid "English"
+msgstr ""
+
+#: .\templates\base.html:9
+msgid ""
+"EMPD  École Mondiale de la Parole de Dieu. Enseignements, publications et "
+"ressources pour étudier la Bible."
+msgstr ""
+
+#: .\templates\base.html:10
+msgid "EMPD"
+msgstr ""
+
+#: .\templates\base.html:51
+msgid "EMPD - Accueil"
+msgstr ""
+
+#: .\templates\base.html:64
+msgid "Ouvrir le menu"
+msgstr ""
+
+#: .\templates\base.html:72 .\templates\base.html:141
+#: .\templates\core\accueil.html:5
+msgid "Accueil"
+msgstr ""
+
+#: .\templates\base.html:75 .\templates\base.html:142
+#: .\templates\core\a_propos.html:4
+msgid "À propos"
+msgstr ""
+
+#: .\templates\base.html:78 .\templates\base.html:143
+#: .\templates\core\accueil.html:224 .\templates\publications\liste.html:4
+#: .\templates\publications\liste.html:12
+msgid "Publications"
+msgstr ""
+
+#: .\templates\base.html:81 .\templates\core\accueil.html:254
+#: .\templates\formations\liste.html:4
+msgid "Enseignements"
+msgstr ""
+
+#: .\templates\base.html:135
+msgid ""
+"École Mondiale de la Parole de Dieu  étudier, comprendre, vivre l'Évangile."
+msgstr ""
+
+#: .\templates\base.html:152
+#, python-format
+msgid "© %(current_year)s EMPD. Tous droits réservés."
+msgstr ""
+
+#: .\templates\core\a_propos.html:11
+msgid "Qui sommes-nous"
+msgstr ""
+
+#: .\templates\core\a_propos.html:12
+msgid "À propos d'EMPD"
+msgstr ""
+
+#: .\templates\core\a_propos.html:14
+msgid ""
+"Un espace de partage et de formation, pensé pour accompagner\n"
+"            chacun dans son cheminement de foi."
+msgstr ""
+
+#: .\templates\core\a_propos.html:22
+msgid ""
+"\n"
+"            EMPD est un espace de partage et de formation, mis à "
+"disposition\n"
+"            gratuitement pour accompagner chacun dans son cheminement. Nos\n"
+"            contenus (vidéos, enregistrements audio, documents PDF) sont\n"
+"            proposés librement, sans condition d'inscription ni de "
+"paiement.\n"
+"            "
+msgstr ""
+
+#: .\templates\core\a_propos.html:31
+msgid ""
+"\n"
+"            Le fonctionnement de cette plateforme repose sur le soutien\n"
+"            volontaire de ceux qui le souhaitent. Toute contribution, "
+"quelle\n"
+"            que soit sa forme, est reçue avec gratitude et sert à faire "
+"vivre\n"
+"            ce travail.\n"
+"            "
+msgstr ""
+
+#: .\templates\core\a_propos.html:40
+msgid ""
+"\n"
+"            Pour toute question, suggestion ou souhait de contribution,\n"
+"            n'hésitez pas à nous contacter.\n"
+"            "
+msgstr ""
+
+#: .\templates\core\accueil.html:19
+msgid "École Mondiale de la Parole de Dieu"
+msgstr ""
+
+#: .\templates\core\accueil.html:23
+msgid "Étudier la Parole."
+msgstr ""
+
+#: .\templates\core\accueil.html:24
+msgid "Comprendre la foi."
+msgstr ""
+
+#: .\templates\core\accueil.html:25
+msgid "Vivre l'Évangile."
+msgstr ""
+
+#: .\templates\core\accueil.html:29
+msgid ""
+"\n"
+"                EMPD est un espace consacré à l'étude, à l'enseignement\n"
+"                et au partage de la Parole de Dieu. Découvrez des\n"
+"                enseignements, des publications et des ressources\n"
+"                destinés à accompagner votre cheminement dans la foi.\n"
+"                "
+msgstr ""
+
+#: .\templates\core\accueil.html:42 .\templates\core\accueil.html:263
+msgid "Découvrir les enseignements"
+msgstr ""
+
+#: .\templates\core\accueil.html:47
+msgid "Voir les publications"
+msgstr ""
+
+#: .\templates\core\accueil.html:60
+msgid "Bible ouverte, éclairée d'une lumière douce"
+msgstr ""
+
+#: .\templates\core\accueil.html:66
+msgid "La Parole de Dieu"
+msgstr ""
+
+#: .\templates\core\accueil.html:67
+msgid "Étudier · Comprendre · Vivre"
+msgstr ""
+
+#: .\templates\core\accueil.html:86
+msgid "Notre fondement"
+msgstr ""
+
+#: .\templates\core\accueil.html:89
+msgid ""
+"« Ta parole est une lampe à mes pieds,\n"
+"        et une lumière sur mon sentier. »"
+msgstr ""
+
+#: .\templates\core\accueil.html:94
+msgid "Psaume 119:105"
+msgstr ""
+
+#: .\templates\core\accueil.html:110
+msgid "Notre mission"
+msgstr ""
+
+#: .\templates\core\accueil.html:113
+msgid ""
+"Une école pour apprendre,\n"
+"                approfondir et transmettre."
+msgstr ""
+
+#: .\templates\core\accueil.html:118
+msgid ""
+"\n"
+"                L'École Mondiale de la Parole de Dieu souhaite offrir\n"
+"                un environnement accessible à celles et ceux qui désirent\n"
+"                approfondir leur connaissance des Écritures.\n"
+"                "
+msgstr ""
+
+#: .\templates\core\accueil.html:126
+msgid ""
+"\n"
+"                À travers des enseignements, des publications et différents\n"
+"                supports pédagogiques, EMPD cherche à favoriser une étude\n"
+"                attentive de la Bible et une compréhension plus approfondie\n"
+"                de son message.\n"
+"                "
+msgstr ""
+
+#: .\templates\core\accueil.html:136
+msgid "Découvrir EMPD"
+msgstr ""
+
+#: .\templates\core\accueil.html:149
+msgid "Étudier"
+msgstr ""
+
+#: .\templates\core\accueil.html:151
+msgid ""
+"Lire les Écritures avec attention et prendre\n"
+"                            le temps d'en approfondir le contenu."
+msgstr ""
+
+#: .\templates\core\accueil.html:160
+msgid "Comprendre"
+msgstr ""
+
+#: .\templates\core\accueil.html:162
+msgid ""
+"Approfondir le contexte, le sens et la portée\n"
+"                            des enseignements bibliques."
+msgstr ""
+
+#: .\templates\core\accueil.html:171
+msgid "Vivre"
+msgstr ""
+
+#: .\templates\core\accueil.html:173
+msgid ""
+"Mettre en pratique les enseignements étudiés\n"
+"                            dans la vie quotidienne."
+msgstr ""
+
+#: .\templates\core\accueil.html:196
+msgid "Explorer"
+msgstr ""
+
+#: .\templates\core\accueil.html:199
+msgid "Des ressources pour votre cheminement"
+msgstr ""
+
+#: .\templates\core\accueil.html:203
+msgid ""
+"Accédez simplement aux différents contenus proposés\n"
+"            par l'École Mondiale de la Parole de Dieu."
+msgstr ""
+
+#: .\templates\core\accueil.html:227
+msgid ""
+"Articles, études et réflexions destinés à approfondir\n"
+"                    différents thèmes liés aux Écritures et à la foi "
+"chrétienne."
+msgstr ""
+
+#: .\templates\core\accueil.html:233
+msgid "Explorer les publications"
+msgstr ""
+
+#: .\templates\core\accueil.html:257
+msgid ""
+"Des supports pédagogiques pour étudier progressivement\n"
+"                    la Parole de Dieu, seul ou dans le cadre d'un groupe."
+msgstr ""
+
+#: .\templates\core\accueil.html:285 .\templates\publications\liste.html:11
+msgid "À découvrir"
+msgstr ""
+
+#: .\templates\core\accueil.html:288
+msgid "Publications récentes"
+msgstr ""
+
+#: .\templates\core\accueil.html:294
+msgid "Toutes les publications"
+msgstr ""
+
+#: .\templates\core\accueil.html:329 .\templates\publications\liste.html:39
+msgid "Lire la suite"
+msgstr ""
+
+#: .\templates\core\accueil.html:341
+msgid "Les prochaines publications seront bientôt disponibles."
+msgstr ""
+
+#: .\templates\core\accueil.html:361 .\templates\formations\liste.html:11
+msgid "Se former"
+msgstr ""
+
+#: .\templates\core\accueil.html:364
+msgid "Enseignements disponibles"
+msgstr ""
+
+#: .\templates\core\accueil.html:370
+msgid "Tous les enseignements"
+msgstr ""
+
+#: .\templates\core\accueil.html:401
+msgid "Télécharger l'enseignement"
+msgstr ""
+
+#: .\templates\core\accueil.html:416
+msgid "Aucun enseignement n'est actuellement disponible."
+msgstr ""
+
+#: .\templates\core\accueil.html:437
+msgid "Soutenir la mission"
+msgstr ""
+
+#: .\templates\core\accueil.html:441
+msgid "Une œuvre fondée sur le partage."
+msgstr ""
+
+#: .\templates\core\accueil.html:445
+msgid ""
+"\n"
+"            Les ressources proposées sur EMPD sont mises à disposition\n"
+"            gratuitement. Si vous souhaitez soutenir le développement\n"
+"            de nouvelles formations et publications, votre contribution\n"
+"            volontaire peut participer à la poursuite de cette mission.\n"
+"            "
+msgstr ""
+
+#: .\templates\core\accueil.html:454
+msgid ""
+"La contribution reste libre et ne conditionne jamais\n"
+"            l'accès aux ressources."
+msgstr ""
+
+#: .\templates\core\accueil.html:472
+msgid ""
+"« Cette bonne nouvelle du royaume sera prêchée dans le monde entier,\n"
+"        pour servir de témoignage à toutes les nations. »"
+msgstr ""
+
+#: .\templates\core\accueil.html:477
+msgid "Matthieu 24:14"
+msgstr ""
+
+#: .\templates\formations\detail.html:30 .\templates\formations\liste.html:53
+msgid "Télécharger"
+msgstr ""
+
+#: .\templates\formations\liste.html:12
+msgid "Enseignements gratuits"
+msgstr ""
+
+#: .\templates\formations\liste.html:14
+msgid ""
+"Vidéos, enregistrements audio et documents PDF pour étudier\n"
+"            la Parole de Dieu à votre rythme."
+msgstr ""
+
+#: .\templates\formations\liste.html:21
+msgid "Toutes"
+msgstr ""
+
+#: .\templates\formations\liste.html:24
+msgid "Vidéos"
+msgstr ""
+
+#: .\templates\formations\liste.html:27
+msgid "Audio"
+msgstr ""
+
+#: .\templates\formations\liste.html:30
+msgid "PDF"
+msgstr ""
+
+#: .\templates\formations\liste.html:50
+msgid "Voir"
+msgstr ""
+
+#: .\templates\formations\liste.html:63
+msgid "Aucun enseignement disponible pour le moment."
+msgstr ""
+
+#: .\templates\formations\liste.html:70
+msgid "Pagination des enseignements"
+msgstr ""
+
+#: .\templates\formations\liste.html:73 .\templates\publications\liste.html:54
+msgid "Précédent"
+msgstr ""
+
+#: .\templates\formations\liste.html:76 .\templates\publications\liste.html:57
+msgid "Suivant"
+msgstr ""
+
+#: .\templates\publications\liste.html:14
+msgid "Articles et réflexions pour approfondir votre étude des Écritures."
+msgstr ""
+
+#: .\templates\publications\liste.html:46
+msgid "Aucune publication pour le moment."
+msgstr ""
+
+#: .\templates\publications\liste.html:51
+msgid "Pagination des publications"
+msgstr ""
+
+#: .\templates\publications\publication_detail.html:13
+#, python-format
+msgid "Publié le %(date)s"
+msgstr ""

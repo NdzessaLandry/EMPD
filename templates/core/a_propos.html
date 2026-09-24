@@ -1,39 +1,46 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}À propos  EMPD{% endblock %}
+{% block title %}{% trans "À propos" %}  EMPD{% endblock %}
 
 {% block content %}
 
 <section class="section-empd">
 
     <div class="page-header">
-        <span class="eyebrow">Qui sommes-nous</span>
-        <h1>À propos d'EMPD</h1>
+        <span class="eyebrow">{% trans "Qui sommes-nous" %}</span>
+        <h1>{% trans "À propos d'EMPD" %}</h1>
         <p class="lead">
-            Un espace de partage et de formation, pensé pour accompagner
-            chacun dans son cheminement de foi.
+            {% blocktrans %}Un espace de partage et de formation, pensé pour accompagner
+            chacun dans son cheminement de foi.{% endblocktrans %}
         </p>
     </div>
 
     <div class="content-card">
 
         <p>
+            {% blocktrans %}
             EMPD est un espace de partage et de formation, mis à disposition
             gratuitement pour accompagner chacun dans son cheminement. Nos
             contenus (vidéos, enregistrements audio, documents PDF) sont
             proposés librement, sans condition d'inscription ni de paiement.
+            {% endblocktrans %}
         </p>
 
         <p>
+            {% blocktrans %}
             Le fonctionnement de cette plateforme repose sur le soutien
             volontaire de ceux qui le souhaitent. Toute contribution, quelle
             que soit sa forme, est reçue avec gratitude et sert à faire vivre
             ce travail.
+            {% endblocktrans %}
         </p>
 
         <p>
+            {% blocktrans %}
             Pour toute question, suggestion ou souhait de contribution,
             n'hésitez pas à nous contacter.
+            {% endblocktrans %}
         </p>
 
     </div>

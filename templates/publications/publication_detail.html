@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block title %}{{ publication.titre }}  EMPD{% endblock %}
 
@@ -9,7 +10,7 @@
     <div class="content-card">
 
         <div class="publication-meta">
-            Publié le {{ publication.date_creation|date:"d F Y à H:i" }}
+            {% blocktrans with date=publication.date_creation|date:"d F Y à H:i" %}Publié le {{ date }}{% endblocktrans %}
             {% if publication.auteur_nom %} · {{ publication.auteur_nom }}{% endif %}
         </div>
 

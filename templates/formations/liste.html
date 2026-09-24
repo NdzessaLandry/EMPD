@@ -1,32 +1,33 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Enseignements  EMPD{% endblock %}
+{% block title %}{% trans "Enseignements" %}  EMPD{% endblock %}
 
 {% block content %}
 
 <section class="section-empd">
 
     <div class="page-header">
-        <span class="eyebrow">Se former</span>
-        <h1>Enseignements gratuits</h1>
+        <span class="eyebrow">{% trans "Se former" %}</span>
+        <h1>{% trans "Enseignements gratuits" %}</h1>
         <p class="lead">
-            Vidéos, enregistrements audio et documents PDF pour étudier
-            la Parole de Dieu à votre rythme.
+            {% blocktrans %}Vidéos, enregistrements audio et documents PDF pour étudier
+            la Parole de Dieu à votre rythme.{% endblocktrans %}
         </p>
     </div>
 
     <div class="filter-bar justify-content-center">
         <a href="?" class="filter-pill{% if not request.GET.type %} active{% endif %}">
-            Toutes
+            {% trans "Toutes" %}
         </a>
         <a href="?type=VIDEO" class="filter-pill{% if request.GET.type == 'VIDEO' %} active{% endif %}">
-            <i class="bi bi-camera-video"></i> Vidéos
+            <i class="bi bi-camera-video"></i> {% trans "Vidéos" %}
         </a>
         <a href="?type=AUDIO" class="filter-pill{% if request.GET.type == 'AUDIO' %} active{% endif %}">
-            <i class="bi bi-headphones"></i> Audio
+            <i class="bi bi-headphones"></i> {% trans "Audio" %}
         </a>
         <a href="?type=PDF" class="filter-pill{% if request.GET.type == 'PDF' %} active{% endif %}">
-            <i class="bi bi-file-earmark-pdf"></i> PDF
+            <i class="bi bi-file-earmark-pdf"></i> {% trans "PDF" %}
         </a>
     </div>
 
@@ -46,10 +47,10 @@
 
                         <div class="formation-actions">
                             <a href="{% url 'formations:formation_detail' f.pk %}" class="btn btn-empd-outline btn-sm">
-                                Voir
+                                {% trans "Voir" %}
                             </a>
                             <a href="{% url 'formations:telecharger' f.pk %}" class="btn btn-empd-primary btn-sm">
-                                <i class="bi bi-download"></i> Télécharger
+                                <i class="bi bi-download"></i> {% trans "Télécharger" %}
                             </a>
                         </div>
                     </div>
@@ -59,20 +60,20 @@
         {% empty %}
             <div class="col-12">
                 <div class="empty-state">
-                    Aucun enseignement disponible pour le moment.
+                    {% trans "Aucun enseignement disponible pour le moment." %}
                 </div>
             </div>
         {% endfor %}
     </div>
 
     {% if is_paginated %}
-        <nav aria-label="Pagination des enseignements">
+        <nav aria-label="{% trans "Pagination des enseignements" %}">
             <ul class="pagination-empd">
                 {% if page_obj.has_previous %}
-                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>
+                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">{% trans "Précédent" %}</a></li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>
+                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">{% trans "Suivant" %}</a></li>
                 {% endif %}
             </ul>
         </nav>

@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Accueil  EMPD{% endblock %}
+{% block title %}{% trans "Accueil" %}  EMPD{% endblock %}
 
 {% block content %}
 
@@ -15,20 +16,22 @@
         <div class="col-lg-7">
 
             <span class="eyebrow">
-                École Mondiale de la Parole de Dieu
+                {% trans "École Mondiale de la Parole de Dieu" %}
             </span>
 
             <h1 class="hero-title">
-                Étudier la Parole.
-                <span>Comprendre la foi.</span>
-                Vivre l'Évangile.
+                {% trans "Étudier la Parole." %}
+                <span>{% trans "Comprendre la foi." %}</span>
+                {% trans "Vivre l'Évangile." %}
             </h1>
 
             <p class="hero-text">
+                {% blocktrans %}
                 EMPD est un espace consacré à l'étude, à l'enseignement
                 et au partage de la Parole de Dieu. Découvrez des
                 enseignements, des publications et des ressources
                 destinés à accompagner votre cheminement dans la foi.
+                {% endblocktrans %}
             </p>
 
             <div class="hero-actions">
@@ -36,12 +39,12 @@
                 <a href="{% url 'formations:liste' %}"
                    class="btn btn-empd-primary">
                     <i class="bi bi-book me-2"></i>
-                    Découvrir les enseignements
+                    {% trans "Découvrir les enseignements" %}
                 </a>
 
                 <a href="{% url 'publications:liste' %}"
                    class="btn btn-empd-outline">
-                    Voir les publications
+                    {% trans "Voir les publications" %}
                 </a>
 
             </div>
@@ -54,14 +57,14 @@
 
                 <img
                     src="{% static 'images/bible.jpg' %}"
-                    alt="Bible ouverte, éclairée d'une lumière douce"
+                    alt="{% trans "Bible ouverte, éclairée d'une lumière douce" %}"
                     class="hero-image"
                     loading="lazy"
                 >
 
                 <div class="hero-image-caption">
-                    <span>La Parole de Dieu</span>
-                    <small>Étudier · Comprendre · Vivre</small>
+                    <span>{% trans "La Parole de Dieu" %}</span>
+                    <small>{% trans "Étudier · Comprendre · Vivre" %}</small>
                 </div>
 
             </div>
@@ -80,15 +83,15 @@
 
     <div class="ornament-line"></div>
 
-    <span class="eyebrow">Notre fondement</span>
+    <span class="eyebrow">{% trans "Notre fondement" %}</span>
 
     <blockquote>
-        « Ta parole est une lampe à mes pieds,
-        et une lumière sur mon sentier. »
+        {% blocktrans %}« Ta parole est une lampe à mes pieds,
+        et une lumière sur mon sentier. »{% endblocktrans %}
     </blockquote>
 
     <p class="verse-reference">
-        Psaume 119:105
+        {% trans "Psaume 119:105" %}
     </p>
 
 </section>
@@ -104,29 +107,33 @@
 
         <div class="col-lg-6">
 
-            <span class="eyebrow">Notre mission</span>
+            <span class="eyebrow">{% trans "Notre mission" %}</span>
 
             <h2>
-                Une école pour apprendre,
-                approfondir et transmettre.
+                {% blocktrans %}Une école pour apprendre,
+                approfondir et transmettre.{% endblocktrans %}
             </h2>
 
             <p>
+                {% blocktrans %}
                 L'École Mondiale de la Parole de Dieu souhaite offrir
                 un environnement accessible à celles et ceux qui désirent
                 approfondir leur connaissance des Écritures.
+                {% endblocktrans %}
             </p>
 
             <p>
+                {% blocktrans %}
                 À travers des enseignements, des publications et différents
                 supports pédagogiques, EMPD cherche à favoriser une étude
                 attentive de la Bible et une compréhension plus approfondie
                 de son message.
+                {% endblocktrans %}
             </p>
 
             <a href="{% url 'core:a_propos' %}"
                class="text-link">
-                Découvrir EMPD
+                {% trans "Découvrir EMPD" %}
                 <i class="bi bi-arrow-right"></i>
             </a>
 
@@ -139,10 +146,10 @@
                 <div class="mission-step">
                     <span>01</span>
                     <div>
-                        <h3>Étudier</h3>
+                        <h3>{% trans "Étudier" %}</h3>
                         <p>
-                            Lire les Écritures avec attention et prendre
-                            le temps d'en approfondir le contenu.
+                            {% blocktrans %}Lire les Écritures avec attention et prendre
+                            le temps d'en approfondir le contenu.{% endblocktrans %}
                         </p>
                     </div>
                 </div>
@@ -150,10 +157,10 @@
                 <div class="mission-step">
                     <span>02</span>
                     <div>
-                        <h3>Comprendre</h3>
+                        <h3>{% trans "Comprendre" %}</h3>
                         <p>
-                            Approfondir le contexte, le sens et la portée
-                            des enseignements bibliques.
+                            {% blocktrans %}Approfondir le contexte, le sens et la portée
+                            des enseignements bibliques.{% endblocktrans %}
                         </p>
                     </div>
                 </div>
@@ -161,10 +168,10 @@
                 <div class="mission-step">
                     <span>03</span>
                     <div>
-                        <h3>Vivre</h3>
+                        <h3>{% trans "Vivre" %}</h3>
                         <p>
-                            Mettre en pratique les enseignements étudiés
-                            dans la vie quotidienne.
+                            {% blocktrans %}Mettre en pratique les enseignements étudiés
+                            dans la vie quotidienne.{% endblocktrans %}
                         </p>
                     </div>
                 </div>
@@ -186,15 +193,15 @@
 
     <div class="section-heading">
 
-        <span class="eyebrow">Explorer</span>
+        <span class="eyebrow">{% trans "Explorer" %}</span>
 
         <h2>
-            Des ressources pour votre cheminement
+            {% trans "Des ressources pour votre cheminement" %}
         </h2>
 
         <p>
-            Accédez simplement aux différents contenus proposés
-            par l'École Mondiale de la Parole de Dieu.
+            {% blocktrans %}Accédez simplement aux différents contenus proposés
+            par l'École Mondiale de la Parole de Dieu.{% endblocktrans %}
         </p>
 
     </div>
@@ -214,16 +221,16 @@
 
                 <span class="resource-number">01</span>
 
-                <h3>Publications</h3>
+                <h3>{% trans "Publications" %}</h3>
 
                 <p>
-                    Articles, études et réflexions destinés à approfondir
-                    différents thèmes liés aux Écritures et à la foi chrétienne.
+                    {% blocktrans %}Articles, études et réflexions destinés à approfondir
+                    différents thèmes liés aux Écritures et à la foi chrétienne.{% endblocktrans %}
                 </p>
 
                 <a href="{% url 'publications:liste' %}"
                    class="text-link">
-                    Explorer les publications
+                    {% trans "Explorer les publications" %}
                     <i class="bi bi-arrow-right"></i>
                 </a>
 
@@ -244,16 +251,16 @@
 
                 <span class="resource-number">02</span>
 
-                <h3>Enseignements</h3>
+                <h3>{% trans "Enseignements" %}</h3>
 
                 <p>
-                    Des supports pédagogiques pour étudier progressivement
-                    la Parole de Dieu, seul ou dans le cadre d'un groupe.
+                    {% blocktrans %}Des supports pédagogiques pour étudier progressivement
+                    la Parole de Dieu, seul ou dans le cadre d'un groupe.{% endblocktrans %}
                 </p>
 
                 <a href="{% url 'formations:liste' %}"
                    class="text-link">
-                    Découvrir les enseignements
+                    {% trans "Découvrir les enseignements" %}
                     <i class="bi bi-arrow-right"></i>
                 </a>
 
@@ -275,16 +282,16 @@
     <div class="section-heading-row">
 
         <div>
-            <span class="eyebrow">À découvrir</span>
+            <span class="eyebrow">{% trans "À découvrir" %}</span>
 
             <h2 class="mb-0">
-                Publications récentes
+                {% trans "Publications récentes" %}
             </h2>
         </div>
 
         <a href="{% url 'publications:liste' %}"
            class="text-link">
-            Toutes les publications
+            {% trans "Toutes les publications" %}
             <i class="bi bi-arrow-right"></i>
         </a>
 
@@ -319,7 +326,7 @@
 
                 <a href="{% url 'publications:publication_detail' pub.pk %}"
                    class="text-link">
-                    Lire la suite
+                    {% trans "Lire la suite" %}
                     <i class="bi bi-arrow-right"></i>
                 </a>
 
@@ -331,7 +338,7 @@
 
         <div class="col-12">
             <div class="empty-state">
-                Les prochaines publications seront bientôt disponibles.
+                {% trans "Les prochaines publications seront bientôt disponibles." %}
             </div>
         </div>
 
@@ -351,16 +358,16 @@
     <div class="section-heading-row">
 
         <div>
-            <span class="eyebrow">Se former</span>
+            <span class="eyebrow">{% trans "Se former" %}</span>
 
             <h2 class="mb-0">
-                Enseignements disponibles
+                {% trans "Enseignements disponibles" %}
             </h2>
         </div>
 
         <a href="{% url 'formations:liste' %}"
            class="text-link">
-            Tous les enseignements
+            {% trans "Tous les enseignements" %}
             <i class="bi bi-arrow-right"></i>
         </a>
 
@@ -391,7 +398,7 @@
 
                 <a href="{% url 'formations:telecharger' f.pk %}"
                    class="download-button"
-                   aria-label="Télécharger l'enseignement">
+                   aria-label="{% trans "Télécharger l'enseignement" %}">
 
                     <i class="bi bi-download"></i>
 
@@ -406,7 +413,7 @@
         <div class="col-12">
 
             <div class="empty-state">
-                Aucun enseignement n'est actuellement disponible.
+                {% trans "Aucun enseignement n'est actuellement disponible." %}
             </div>
 
         </div>
@@ -427,23 +434,25 @@
     <div class="support-card">
 
         <span class="eyebrow">
-            Soutenir la mission
+            {% trans "Soutenir la mission" %}
         </span>
 
         <h2>
-            Une œuvre fondée sur le partage.
+            {% trans "Une œuvre fondée sur le partage." %}
         </h2>
 
         <p>
+            {% blocktrans %}
             Les ressources proposées sur EMPD sont mises à disposition
             gratuitement. Si vous souhaitez soutenir le développement
             de nouvelles formations et publications, votre contribution
             volontaire peut participer à la poursuite de cette mission.
+            {% endblocktrans %}
         </p>
 
         <p class="support-note">
-            La contribution reste libre et ne conditionne jamais
-            l'accès aux ressources.
+            {% blocktrans %}La contribution reste libre et ne conditionne jamais
+            l'accès aux ressources.{% endblocktrans %}
         </p>
 
     </div>
@@ -460,12 +469,12 @@
     <div class="ornament-line"></div>
 
     <blockquote>
-        « Cette bonne nouvelle du royaume sera prêchée dans le monde entier,
-        pour servir de témoignage à toutes les nations. »
+        {% blocktrans %}« Cette bonne nouvelle du royaume sera prêchée dans le monde entier,
+        pour servir de témoignage à toutes les nations. »{% endblocktrans %}
     </blockquote>
 
     <p>
-        Matthieu 24:14
+        {% trans "Matthieu 24:14" %}
     </p>
 
 </section>
