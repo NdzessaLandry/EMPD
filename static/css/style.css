@@ -1,24 +1,29 @@
 /* =========================================================
    EMPD — Design System
-   Palette : Noir / Blanc / Gris
+   Palette : vitrail clair (ivoire / violet liturgique / rose / sauge)
    ========================================================= */
 
 :root {
-    --koi-noir: #111111;
-    --koi-noir-soft: #1c1c1c;
-    --koi-gris-fonce: #4a4a4a;
-    --koi-gris: #777777;
-    --koi-gris-clair: #e9e9e9;
-    --koi-gris-tres-clair: #f6f6f6;
-    --koi-blanc: #ffffff;
+    --empd-ivoire: #faf6ef;
+    --empd-ivoire-soft: #fffdfa;
+    --empd-lin: #f1e9db;
+    --empd-encre: #3d372f;
+    --empd-encre-douce: #6f6558;
+    --empd-encre-pale: #9a9184;
 
-    --koi-border: #e5e5e5;
-    --koi-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    --koi-shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.10);
+    --empd-violet: #7c6ba0;
+    --empd-violet-soft: #ece7f3;
+    --empd-rose: #c68a9c;
+    --empd-rose-soft: #f6ebee;
+    --empd-sauge: #7f9a7c;
+    --empd-sauge-soft: #edf2ea;
 
-    --radius-sm: 6px;
-    --radius-md: 10px;
-    --radius-lg: 16px;
+    --empd-border: #e6dccb;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 26px;
+    --radius-arc: 50% 50% 12px 12px / 30% 30% 12px 12px;
 
     --transition: 0.25s ease;
 }
@@ -36,8 +41,8 @@ body {
     margin: 0;
     padding: 0;
 
-    background-color: var(--koi-blanc);
-    color: var(--koi-noir);
+    background-color: var(--empd-ivoire);
+    color: var(--empd-encre);
 
     font-family: "Inter", "Segoe UI", Arial, sans-serif;
     font-size: 16px;
@@ -58,39 +63,64 @@ h3,
 h4,
 h5,
 h6,
-.brand-font {
-    font-family: "Georgia", "Times New Roman", serif;
-    color: var(--koi-noir);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+.brand-font,
+blockquote {
+    font-family: "Cormorant Garamond", "Georgia", serif;
+    color: var(--empd-encre);
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 h1 {
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    line-height: 1.15;
+    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+    line-height: 1.18;
+    font-weight: 600;
+}
+
+h1 span {
+    display: block;
+    color: var(--empd-violet);
+    font-style: italic;
 }
 
 h2 {
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    line-height: 1.2;
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    line-height: 1.25;
+    max-width: 22ch;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    font-weight: 600;
 }
 
 p {
-    color: var(--koi-gris-fonce);
+    color: var(--empd-encre-douce);
+    max-width: 62ch;
 }
 
 a {
-    color: var(--koi-noir);
+    color: var(--empd-encre);
     text-decoration: none;
     transition: color var(--transition);
 }
 
 a:hover {
-    color: var(--koi-gris-fonce);
+    color: var(--empd-violet);
+}
+
+
+/* Petit texte d'introduction : plus de MAJUSCULES forcées,
+   on préfère une touche italique + couleur pour signaler la section */
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 0.6rem;
+
+    color: var(--empd-violet);
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
 
@@ -98,57 +128,50 @@ a:hover {
    NAVBAR
    ========================================================= */
 
-.navbar-koi {
+.navbar-empd {
     position: sticky;
     top: 0;
     z-index: 1030;
 
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(250, 246, 239, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-    border-bottom: 1px solid var(--koi-border);
+    border-bottom: 1px solid var(--empd-border);
 
     min-height: 76px;
 }
 
-
-/* Logo / marque */
-
-.navbar-koi .navbar-brand {
+.navbar-empd .navbar-brand {
     display: inline-flex;
     align-items: center;
 
-    color: var(--koi-noir) !important;
+    color: var(--empd-encre) !important;
 
-    font-family: "Georgia", "Times New Roman", serif;
-    font-size: 1.55rem !important;
-    font-weight: 700;
-
-    letter-spacing: -0.03em;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem !important;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 
     transition: opacity var(--transition);
 }
 
-.navbar-koi .navbar-brand:hover {
-    opacity: 0.65;
+.navbar-empd .navbar-brand:hover {
+    opacity: 0.7;
 }
 
-
-/* Liens */
-
-.navbar-koi .navbar-nav {
-    gap: 0.35rem;
+.navbar-empd .navbar-nav {
+    gap: 0.3rem;
 }
 
-.navbar-koi .nav-link {
+.navbar-empd .nav-link {
     position: relative;
 
     padding: 0.55rem 0.9rem !important;
 
-    color: var(--koi-gris-fonce) !important;
+    color: var(--empd-encre-douce) !important;
 
-    font-size: 0.94rem;
+    font-size: 0.95rem;
     font-weight: 500;
 
     border-radius: var(--radius-sm);
@@ -158,44 +181,41 @@ a:hover {
         background-color var(--transition);
 }
 
-.navbar-koi .nav-link:hover {
-    color: var(--koi-noir) !important;
-    background-color: var(--koi-gris-tres-clair);
+.navbar-empd .nav-link:hover {
+    color: var(--empd-encre) !important;
+    background-color: var(--empd-violet-soft);
 }
 
-
-/* Lien actif */
-
-.navbar-koi .nav-link.active {
-    color: var(--koi-noir) !important;
+.navbar-empd .nav-link.active {
+    color: var(--empd-violet) !important;
     font-weight: 600;
 }
 
-.navbar-koi .nav-link.active::after {
+.navbar-empd .nav-link.active::after {
     content: "";
-
     position: absolute;
     left: 0.9rem;
     right: 0.9rem;
     bottom: 0.15rem;
-
     height: 2px;
-
-    background-color: var(--koi-noir);
+    background-color: var(--empd-violet);
     border-radius: 999px;
 }
 
-
-/* Bouton mobile */
-
-.navbar-koi .navbar-toggler {
-    border: 1px solid var(--koi-border);
+.navbar-empd .navbar-toggler {
+    border: 1px solid var(--empd-border);
     border-radius: var(--radius-sm);
     padding: 0.55rem 0.7rem;
 }
 
-.navbar-koi .navbar-toggler:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+.navbar-empd .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(124, 107, 160, 0.15);
+}
+
+.navbar-empd .form-select {
+    min-height: 38px;
+    border-color: var(--empd-border);
+    font-size: 0.85rem;
 }
 
 
@@ -205,49 +225,71 @@ a:hover {
 
 main.container {
     min-height: calc(100vh - 190px);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
 }
 
 
 /* =========================================================
-   CARDS
+   HERO
    ========================================================= */
 
-.card-koi {
-    background-color: var(--koi-blanc);
-
-    border: 1px solid var(--koi-border);
-    border-radius: var(--radius-md);
-
-    box-shadow: var(--koi-shadow);
-
-    transition:
-        transform var(--transition),
-        box-shadow var(--transition),
-        border-color var(--transition);
+.hero-empd {
+    padding: 3.5rem 0 4.5rem;
 }
 
-.card-koi:hover {
-    transform: translateY(-3px);
-
-    border-color: #d5d5d5;
-
-    box-shadow: var(--koi-shadow-hover);
+.hero-title {
+    margin-bottom: 1.3rem;
 }
 
-
-/* Cartes Bootstrap */
-
-.card {
-    border-color: var(--koi-border);
-    border-radius: var(--radius-md);
-    box-shadow: var(--koi-shadow);
+.hero-text {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
 }
 
-.card-header {
-    background-color: var(--koi-blanc);
-    border-bottom: 1px solid var(--koi-border);
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+}
+
+/* Cadre en arc — la signature visuelle de la page */
+.hero-image-frame {
+    position: relative;
+    overflow: hidden;
+
+    border-radius: var(--radius-arc);
+    background-color: var(--empd-lin);
+    border: 1px solid var(--empd-border);
+}
+
+.hero-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.hero-image-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 1.5rem 1.5rem 1.2rem;
+
+    background: linear-gradient(to top, rgba(61, 55, 47, 0.55), transparent);
+    color: var(--empd-ivoire-soft);
+}
+
+.hero-image-caption span {
+    display: block;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.hero-image-caption small {
+    opacity: 0.85;
+    letter-spacing: 0.03em;
 }
 
 
@@ -257,119 +299,304 @@ main.container {
 
 .btn {
     border-radius: var(--radius-sm);
-
-    padding: 0.65rem 1.15rem;
-
+    padding: 0.7rem 1.3rem;
     font-weight: 600;
-    font-size: 0.94rem;
-
+    font-size: 0.95rem;
     transition:
         transform var(--transition),
         background-color var(--transition),
         color var(--transition),
-        border-color var(--transition),
-        box-shadow var(--transition);
+        border-color var(--transition);
 }
 
 .btn:hover {
     transform: translateY(-1px);
 }
 
-
-/* Bouton principal */
-
-.btn-koi-primary {
-    background-color: var(--koi-noir);
-    border: 1px solid var(--koi-noir);
-
-    color: var(--koi-blanc);
+.btn-empd-primary {
+    background-color: var(--empd-violet);
+    border: 1px solid var(--empd-violet);
+    color: var(--empd-ivoire-soft);
 }
 
-.btn-koi-primary:hover {
-    background-color: var(--koi-noir-soft);
-    border-color: var(--koi-noir-soft);
-
-    color: var(--koi-blanc);
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+.btn-empd-primary:hover {
+    background-color: #6a5b8c;
+    border-color: #6a5b8c;
+    color: var(--empd-ivoire-soft);
 }
 
-
-/* Bouton secondaire */
-
-.btn-koi-outline {
+.btn-empd-outline {
     background-color: transparent;
-
-    border: 1px solid #cfcfcf;
-
-    color: var(--koi-noir);
+    border: 1px solid var(--empd-border);
+    color: var(--empd-encre);
 }
 
-.btn-koi-outline:hover {
-    background-color: var(--koi-noir);
-    border-color: var(--koi-noir);
-
-    color: var(--koi-blanc);
+.btn-empd-outline:hover {
+    background-color: var(--empd-lin);
+    border-color: var(--empd-encre-pale);
+    color: var(--empd-encre);
 }
 
-
-/* =========================================================
-   FORMULAIRES
-   ========================================================= */
-
-.form-control,
-.form-select {
-    min-height: 46px;
-
-    border: 1px solid #d9d9d9;
-    border-radius: var(--radius-sm);
-
-    color: var(--koi-noir);
-    background-color: var(--koi-blanc);
-
-    transition:
-        border-color var(--transition),
-        box-shadow var(--transition);
-}
-
-.form-control::placeholder {
-    color: #999999;
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: var(--koi-noir);
-
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
-}
-
-.form-label {
-    margin-bottom: 0.45rem;
-
-    color: var(--koi-noir);
-
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     font-weight: 600;
-    font-size: 0.92rem;
+    color: var(--empd-violet);
+}
+
+.text-link:hover {
+    color: var(--empd-encre);
+    gap: 0.6rem;
+}
+
+.text-link i {
+    transition: transform var(--transition);
 }
 
 
 /* =========================================================
-   BANDEAU CONTRIBUTION
+   VERSETS
    ========================================================= */
 
-.bandeau-contribution {
+.verse-section,
+.final-verse {
+    text-align: center;
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1rem;
+}
+
+.ornament-line {
+    width: 46px;
+    height: 2px;
+    margin: 0 auto 1.4rem;
+    background-color: var(--empd-rose);
+    border-radius: 999px;
+}
+
+.verse-section blockquote,
+.final-verse blockquote {
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--empd-encre);
+    margin: 0.8rem 0 1rem;
+}
+
+.verse-reference,
+.final-verse p {
+    color: var(--empd-encre-pale);
+    font-size: 0.92rem;
+    letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section-empd {
+    padding: 4rem 0;
+}
+
+.section-soft {
+    background-color: var(--empd-lin);
+    border-radius: var(--radius-lg);
+    margin: 0 -0.5rem;
+    padding: 4rem 1.5rem;
+}
+
+.section-heading {
+    max-width: 40rem;
+    margin: 0 auto 2.8rem;
+    text-align: center;
+}
+
+.section-heading-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.2rem;
+}
+
+
+/* =========================================================
+   MISSION
+   ========================================================= */
+
+.mission-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.mission-step {
+    display: flex;
+    gap: 1.2rem;
+    padding: 1.4rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-md);
+}
+
+.mission-step span {
+    flex-shrink: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--empd-rose);
+}
+
+.mission-step h3 {
+    margin-bottom: 0.3rem;
+}
+
+.mission-step p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   CARTES RESSOURCES
+   ========================================================= */
+
+.resource-card {
     position: relative;
+    height: 100%;
+    padding: 2rem;
 
-    background-color: var(--koi-gris-tres-clair);
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-top: 3px solid var(--empd-violet);
+    border-radius: var(--radius-md);
 
-    border: 1px solid var(--koi-border);
-    border-left: 3px solid var(--koi-noir);
+    transition: border-color var(--transition);
+}
 
-    border-radius: var(--radius-sm);
+.resource-card:nth-of-type(2),
+.col-md-6:nth-child(2) .resource-card {
+    border-top-color: var(--empd-sauge);
+}
 
-    padding: 1rem 1.25rem;
+.resource-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
 
-    color: var(--koi-gris-fonce);
+    margin-bottom: 1rem;
+
+    background-color: var(--empd-violet-soft);
+    border-radius: 50%;
+
+    color: var(--empd-violet);
+    font-size: 1.2rem;
+}
+
+.resource-number {
+    position: absolute;
+    top: 1.8rem;
+    right: 1.8rem;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.6rem;
+    color: var(--empd-encre-pale);
+}
+
+
+/* =========================================================
+   PUBLICATIONS / FORMATIONS
+   ========================================================= */
+
+.publication-card {
+    height: 100%;
+    padding: 1.6rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-md);
+
+    transition: box-shadow var(--transition);
+}
+
+.publication-card:hover {
+    box-shadow: 0 10px 24px rgba(124, 107, 160, 0.1);
+}
+
+.publication-meta {
+    color: var(--empd-encre-pale);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-card p {
+    font-size: 0.94rem;
+}
+
+.formation-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.2rem 1.4rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-md);
+}
+
+.formation-type {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+
+    color: var(--empd-sauge);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.formation-card h3 {
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.download-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+
+    background-color: var(--empd-sauge-soft);
+    color: var(--empd-sauge);
+    border-radius: 50%;
+
+    transition: background-color var(--transition);
+}
+
+.download-button:hover {
+    background-color: var(--empd-sauge);
+    color: var(--empd-ivoire-soft);
+}
+
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: var(--empd-encre-pale);
+    background-color: var(--empd-lin);
+    border-radius: var(--radius-md);
 }
 
 
@@ -377,21 +604,276 @@ main.container {
    BADGES
    ========================================================= */
 
-.badge-formation {
+.badge-empd {
     display: inline-flex;
     align-items: center;
+    gap: 0.35rem;
 
-    padding: 0.4rem 0.7rem;
+    padding: 0.35rem 0.75rem;
 
-    background-color: var(--koi-noir);
-    color: var(--koi-blanc);
+    background-color: var(--empd-violet-soft);
+    color: var(--empd-violet);
 
     border-radius: 999px;
 
     font-size: 0.75rem;
     font-weight: 600;
-
     letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   FILTRES (pills)
+   ========================================================= */
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    padding: 0.5rem 1rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: 999px;
+
+    color: var(--empd-encre-douce);
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    transition:
+        background-color var(--transition),
+        color var(--transition),
+        border-color var(--transition);
+}
+
+.filter-pill:hover {
+    color: var(--empd-encre);
+    border-color: var(--empd-encre-pale);
+}
+
+.filter-pill.active {
+    background-color: var(--empd-violet);
+    border-color: var(--empd-violet);
+    color: var(--empd-ivoire-soft);
+}
+
+
+/* =========================================================
+   GRILLE ENSEIGNEMENTS (liste)
+   ========================================================= */
+
+.formation-grid-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+
+    transition: box-shadow var(--transition);
+}
+
+.formation-grid-card:hover {
+    box-shadow: 0 10px 24px rgba(124, 107, 160, 0.1);
+}
+
+.formation-grid-card .formation-thumb {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    background-color: var(--empd-lin);
+}
+
+.formation-grid-card .formation-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1.4rem;
+}
+
+.formation-grid-card h5 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+
+.formation-grid-card p {
+    font-size: 0.92rem;
+    flex-grow: 1;
+}
+
+.formation-grid-card .formation-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+}
+
+
+/* =========================================================
+   PUBLICATIONS (liste en colonne)
+   ========================================================= */
+
+.publication-row {
+    padding: 1.8rem;
+    margin-bottom: 1.4rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-md);
+}
+
+.publication-row .publication-meta {
+    margin-bottom: 0.4rem;
+}
+
+.publication-row h5 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+
+.publication-row img {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+}
+
+
+/* =========================================================
+   PAGINATION
+   ========================================================= */
+
+.pagination-empd {
+    display: flex;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 2.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.pagination-empd .page-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 1.1rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-sm);
+
+    color: var(--empd-encre);
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: background-color var(--transition), color var(--transition);
+}
+
+.pagination-empd .page-link:hover {
+    background-color: var(--empd-violet-soft);
+    color: var(--empd-violet);
+}
+
+
+/* =========================================================
+   PAGES INTÉRIEURES (À propos, etc.)
+   ========================================================= */
+
+.page-header {
+    max-width: 42rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    margin-bottom: 0.6rem;
+}
+
+.page-header .lead {
+    color: var(--empd-encre-douce);
+    font-size: 1.05rem;
+}
+
+.content-card {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem;
+
+    background-color: var(--empd-ivoire-soft);
+    border: 1px solid var(--empd-border);
+    border-top: 3px solid var(--empd-violet);
+    border-radius: var(--radius-md);
+}
+
+.content-card p {
+    max-width: none;
+}
+
+.content-card p + p {
+    margin-top: 1.1rem;
+}
+
+
+/* =========================================================
+   SOUTIEN
+   ========================================================= */
+
+.support-card {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3rem;
+    text-align: center;
+
+    background-color: var(--empd-rose-soft);
+    border-radius: var(--radius-lg);
+}
+
+.support-note {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--empd-encre-pale);
+}
+
+
+/* =========================================================
+   FORMULAIRES (repris pour cohérence)
+   ========================================================= */
+
+.form-control,
+.form-select {
+    min-height: 46px;
+    border: 1px solid var(--empd-border);
+    border-radius: var(--radius-sm);
+    color: var(--empd-encre);
+    background-color: var(--empd-ivoire-soft);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--empd-violet);
+    box-shadow: 0 0 0 3px rgba(124, 107, 160, 0.12);
+}
+
+.form-label {
+    margin-bottom: 0.45rem;
+    color: var(--empd-encre);
+    font-weight: 600;
+    font-size: 0.92rem;
 }
 
 
@@ -402,105 +884,7 @@ main.container {
 .alert {
     border-radius: var(--radius-sm);
     border-width: 1px;
-
     box-shadow: none;
-}
-
-
-/* =========================================================
-   SECTIONS
-   ========================================================= */
-
-.section-koi {
-    padding: 4rem 0;
-}
-
-.section-koi + .section-koi {
-    border-top: 1px solid var(--koi-border);
-}
-
-
-/* Petit texte introductif */
-
-.eyebrow {
-    display: inline-block;
-
-    margin-bottom: 0.75rem;
-
-    color: var(--koi-gris);
-
-    font-size: 0.78rem;
-    font-weight: 700;
-
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   IMAGES
-   ========================================================= */
-
-.image-koi {
-    display: block;
-
-    width: 100%;
-
-    border-radius: var(--radius-md);
-
-    object-fit: cover;
-
-    transition:
-        transform 0.4s ease,
-        filter 0.4s ease;
-}
-
-.image-frame-koi {
-    overflow: hidden;
-
-    border-radius: var(--radius-md);
-
-    background-color: var(--koi-gris-tres-clair);
-}
-
-.image-frame-koi:hover .image-koi {
-    transform: scale(1.025);
-}
-
-
-/* =========================================================
-   TABLEAUX
-   ========================================================= */
-
-.table-koi {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-
-    overflow: hidden;
-
-    border: 1px solid var(--koi-border);
-    border-radius: var(--radius-md);
-}
-
-.table-koi th {
-    background-color: var(--koi-gris-tres-clair);
-
-    color: var(--koi-noir);
-
-    font-size: 0.85rem;
-    font-weight: 700;
-}
-
-.table-koi th,
-.table-koi td {
-    padding: 0.9rem 1rem;
-
-    border-bottom: 1px solid var(--koi-border);
-}
-
-.table-koi tr:last-child td {
-    border-bottom: none;
 }
 
 
@@ -508,31 +892,23 @@ main.container {
    FOOTER
    ========================================================= */
 
-.footer-koi {
+.footer-empd {
     margin-top: 5rem;
-
-    background-color: var(--koi-blanc);
-
-    color: var(--koi-gris);
-
-    border-top: 1px solid var(--koi-border);
+    background-color: var(--empd-lin);
+    color: var(--empd-encre-douce);
+    border-top: 1px solid var(--empd-border);
 }
 
-.footer-koi .brand-font {
-    color: var(--koi-noir);
+.footer-empd .brand-font {
+    color: var(--empd-encre);
 }
 
-.footer-koi p {
-    color: var(--koi-gris);
+.footer-empd p {
+    color: var(--empd-encre-douce);
 }
 
-
-/* =========================================================
-   ICÔNES
-   ========================================================= */
-
-.bi {
-    line-height: 1;
+.footer-empd .border-koi {
+    border-color: var(--empd-border) !important;
 }
 
 
@@ -541,19 +917,30 @@ main.container {
    ========================================================= */
 
 .text-koi {
-    color: var(--koi-noir) !important;
+    color: var(--empd-encre) !important;
 }
 
 .text-koi-muted {
-    color: var(--koi-gris) !important;
+    color: var(--empd-encre-pale) !important;
 }
 
-.bg-koi-light {
-    background-color: var(--koi-gris-tres-clair) !important;
+
+/* =========================================================
+   ACCESSIBILITÉ / MOUVEMENT
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
 
-.border-koi {
-    border-color: var(--koi-border) !important;
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--empd-violet);
+    outline-offset: 2px;
 }
 
 
@@ -562,54 +949,48 @@ main.container {
    ========================================================= */
 
 @media (max-width: 991.98px) {
-
-    .navbar-koi {
+    .navbar-empd {
         min-height: 68px;
     }
 
-    .navbar-koi .navbar-nav {
-        gap: 0.15rem;
-        padding-top: 0.75rem;
-        padding-bottom: 0.75rem;
+    .hero-empd {
+        padding: 2rem 0 3rem;
     }
 
-    .navbar-koi .nav-link {
-        padding: 0.7rem 0.8rem !important;
+    .hero-image-frame {
+        margin-top: 1.5rem;
     }
 
-    .navbar-koi .nav-link.active::after {
-        display: none;
-    }
-
-    main.container {
-        padding-top: 1.5rem;
-    }
-
-    .section-koi {
+    .section-empd {
         padding: 3rem 0;
+    }
+
+    .section-soft {
+        margin: 0;
+        padding: 3rem 1.2rem;
+    }
+
+    .support-card {
+        padding: 2rem 1.4rem;
     }
 }
 
-
 @media (max-width: 575.98px) {
-
     body {
         font-size: 15px;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.7rem;
-    }
-
-    .btn {
+    .hero-actions .btn {
         width: 100%;
+        justify-content: center;
     }
 
-    .footer-koi {
+    .formation-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-empd {
         margin-top: 3rem;
     }
 }

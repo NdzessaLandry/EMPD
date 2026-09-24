@@ -1,10 +1,34 @@
 {% extends "base.html" %}
-{% block title %}{{ publication.titre }} - EMPD{% endblock %}
+
+{% block title %}{{ publication.titre }}  EMPD{% endblock %}
+
 {% block content %}
-<div class="card card-koi p-4">
-  <div class="small text-muted mb-2">Publié le {{ publication.date_creation|date:"d F Y à H:i" }}  {{ publication.auteur_nom }}</div>
-  <h2>{{ publication.titre }}</h2>
-  {% if publication.image %}<img src="{{ publication.image.url }}" class="img-fluid rounded my-3">{% endif %}
-  <p style="white-space: pre-line;">{{ publication.contenu }}</p>
-</div>
+
+<section class="section-empd">
+
+    <div class="content-card">
+
+        <div class="publication-meta">
+            Publié le {{ publication.date_creation|date:"d F Y à H:i" }}
+            {% if publication.auteur_nom %} · {{ publication.auteur_nom }}{% endif %}
+        </div>
+
+        <h1 class="mb-3">{{ publication.titre }}</h1>
+
+        {% if publication.image %}
+            <img
+                src="{{ publication.image.url }}"
+                alt="{{ publication.titre }}"
+                class="img-fluid mb-3"
+                style="width:100%; border-radius: var(--radius-sm);"
+                loading="lazy"
+            >
+        {% endif %}
+
+        <p style="white-space: pre-line;">{{ publication.contenu }}</p>
+
+    </div>
+
+</section>
+
 {% endblock %}

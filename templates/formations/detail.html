@@ -1,13 +1,36 @@
 {% extends "base.html" %}
-{% block title %}{{ formation.titre }} EMPD{% endblock %}
+
+{% block title %}{{ formation.titre }}  EMPD{% endblock %}
+
 {% block content %}
-<div class="card card-koi p-4">
-  <span class="badge badge-formation mb-2 align-self-start">{{ formation.get_type_formation_display }}</span>
-  <h2>{{ formation.titre }}</h2>
-  {% if formation.miniature %}<img src="{{ formation.miniature.url }}" class="img-fluid rounded my-3" style="max-height:320px;object-fit:cover;">{% endif %}
-  <p style="white-space: pre-line;">{{ formation.description }}</p>
-  <a href="{% url 'formations:telecharger' formation.pk %}" class="btn btn-koi-primary mt-2 align-self-start">
-    <i class="bi bi-download"></i> Télécharger
-  </a>
-</div>
+
+<section class="section-empd">
+
+    <div class="content-card">
+
+        <span class="badge-empd mb-3">{{ formation.get_type_formation_display }}</span>
+
+        <h1 class="mb-3">{{ formation.titre }}</h1>
+
+        {% if formation.miniature %}
+            <img
+                src="{{ formation.miniature.url }}"
+                alt="{{ formation.titre }}"
+                class="img-fluid mb-3"
+                style="width:100%; max-height:320px; object-fit:cover; border-radius: var(--radius-sm);"
+                loading="lazy"
+            >
+        {% endif %}
+
+        <p style="white-space: pre-line;">{{ formation.description }}</p>
+
+        <a href="{% url 'formations:telecharger' formation.pk %}"
+           class="btn btn-empd-primary mt-2">
+            <i class="bi bi-download"></i> Télécharger
+        </a>
+
+    </div>
+
+</section>
+
 {% endblock %}

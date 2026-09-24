@@ -1,39 +1,83 @@
 {% extends "base.html" %}
-{% block title %}Formations EMPD{% endblock %}
+
+{% block title %}Enseignements  EMPD{% endblock %}
+
 {% block content %}
-<h2 class="brand-font mb-3">Formations gratuites</h2>
-<div class="mb-3">
-  <a href="?" class="btn btn-sm btn-koi-outline">Toutes</a>
-  <a href="?type=VIDEO" class="btn btn-sm btn-koi-outline"><i class="bi bi-camera-video"></i> Vidéos</a>
-  <a href="?type=AUDIO" class="btn btn-sm btn-koi-outline"><i class="bi bi-headphones"></i> Audio</a>
-  <a href="?type=PDF" class="btn btn-sm btn-koi-outline"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
-</div>
-<div class="row">
-  {% for f in formations %}
-    <div class="col-md-4 mb-4">
-      <div class="card card-koi h-100">
-        {% if f.miniature %}<img src="{{ f.miniature.url }}" class="card-img-top" style="height:160px;object-fit:cover;">{% endif %}
-        <div class="card-body d-flex flex-column">
-          <span class="badge badge-formation mb-2 align-self-start">{{ f.get_type_formation_display }}</span>
-          <h5>{{ f.titre }}</h5>
-          <p class="small text-muted flex-grow-1">{{ f.description|truncatewords:18 }}</p>
-          <div class="d-flex justify-content-between">
-            <a href="{% url 'formations:formation_detail' f.pk %}" class="btn btn-koi-outline btn-sm">Voir</a>
-            <a href="{% url 'formations:telecharger' f.pk %}" class="btn btn-koi-primary btn-sm"><i class="bi bi-download"></i> Télécharger</a>
-          </div>
-        </div>
-      </div>
+
+<section class="section-empd">
+
+    <div class="page-header">
+        <span class="eyebrow">Se former</span>
+        <h1>Enseignements gratuits</h1>
+        <p class="lead">
+            Vidéos, enregistrements audio et documents PDF pour étudier
+            la Parole de Dieu à votre rythme.
+        </p>
     </div>
-  {% empty %}
-    <p class="text-muted">Aucune formation disponible pour le moment.</p>
-  {% endfor %}
-</div>
-{% if is_paginated %}
-  <nav>
-    <ul class="pagination">
-      {% if page_obj.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>{% endif %}
-      {% if page_obj.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>{% endif %}
-    </ul>
-  </nav>
-{% endif %}
+
+    <div class="filter-bar justify-content-center">
+        <a href="?" class="filter-pill{% if not request.GET.type %} active{% endif %}">
+            Toutes
+        </a>
+        <a href="?type=VIDEO" class="filter-pill{% if request.GET.type == 'VIDEO' %} active{% endif %}">
+            <i class="bi bi-camera-video"></i> Vidéos
+        </a>
+        <a href="?type=AUDIO" class="filter-pill{% if request.GET.type == 'AUDIO' %} active{% endif %}">
+            <i class="bi bi-headphones"></i> Audio
+        </a>
+        <a href="?type=PDF" class="filter-pill{% if request.GET.type == 'PDF' %} active{% endif %}">
+            <i class="bi bi-file-earmark-pdf"></i> PDF
+        </a>
+    </div>
+
+    <div class="row g-4">
+        {% for f in formations %}
+            <div class="col-md-4">
+                <div class="formation-grid-card">
+
+                    {% if f.miniature %}
+                        <img src="{{ f.miniature.url }}" alt="{{ f.titre }}" class="formation-thumb" loading="lazy">
+                    {% endif %}
+
+                    <div class="formation-body">
+                        <span class="badge-empd mb-2 align-self-start">{{ f.get_type_formation_display }}</span>
+                        <h5>{{ f.titre }}</h5>
+                        <p>{{ f.description|truncatewords:18 }}</p>
+
+                        <div class="formation-actions">
+                            <a href="{% url 'formations:formation_detail' f.pk %}" class="btn btn-empd-outline btn-sm">
+                                Voir
+                            </a>
+                            <a href="{% url 'formations:telecharger' f.pk %}" class="btn btn-empd-primary btn-sm">
+                                <i class="bi bi-download"></i> Télécharger
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="empty-state">
+                    Aucun enseignement disponible pour le moment.
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        <nav aria-label="Pagination des enseignements">
+            <ul class="pagination-empd">
+                {% if page_obj.has_previous %}
+                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+</section>
+
 {% endblock %}

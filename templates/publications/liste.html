@@ -1,25 +1,64 @@
 {% extends "base.html" %}
-{% block title %}Publications EMPD{% endblock %}
-{% block content %}
-<h2 class="brand-font mb-3">Publications</h2>
-{% for pub in publications %}
-  <div class="card card-koi mb-3 p-3">
-    <div class="small text-muted mb-1">{{ pub.date_creation|date:"d M Y, H:i" }} — {{ pub.auteur_nom }}</div>
-    <h5><a href="{% url 'publications:publication_detail' pub.pk %}" class="text-decoration-none text-dark">{{ pub.titre }}</a></h5>
-    {% if pub.image %}<img src="{{ pub.image.url }}" class="img-fluid rounded my-2" style="max-height:220px;object-fit:cover;">{% endif %}
-    <p class="mb-1">{{ pub.contenu|truncatewords:35 }}</p>
-    <a href="{% url 'publications:publication_detail' pub.pk %}" class="btn btn-koi-outline btn-sm align-self-start">Lire la suite</a>
-  </div>
-{% empty %}
-  <p class="text-muted">Aucune publication pour le moment.</p>
-{% endfor %}
 
-{% if is_paginated %}
-  <nav>
-    <ul class="pagination">
-      {% if page_obj.has_previous %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>{% endif %}
-      {% if page_obj.has_next %}<li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>{% endif %}
-    </ul>
-  </nav>
-{% endif %}
+{% block title %}Publications  EMPD{% endblock %}
+
+{% block content %}
+
+<section class="section-empd">
+
+    <div class="page-header">
+        <span class="eyebrow">À découvrir</span>
+        <h1>Publications</h1>
+        <p class="lead">
+            Articles et réflexions pour approfondir votre étude des Écritures.
+        </p>
+    </div>
+
+    {% for pub in publications %}
+        <article class="publication-row">
+
+            <div class="publication-meta">
+                {{ pub.date_creation|date:"d M Y, H:i" }}
+                {% if pub.auteur_nom %} · {{ pub.auteur_nom }}{% endif %}
+            </div>
+
+            <h5>
+                <a href="{% url 'publications:publication_detail' pub.pk %}">
+                    {{ pub.titre }}
+                </a>
+            </h5>
+
+            {% if pub.image %}
+                <img src="{{ pub.image.url }}" alt="{{ pub.titre }}" loading="lazy">
+            {% endif %}
+
+            <p>{{ pub.contenu|truncatewords:35 }}</p>
+
+            <a href="{% url 'publications:publication_detail' pub.pk %}" class="text-link">
+                Lire la suite
+                <i class="bi bi-arrow-right"></i>
+            </a>
+
+        </article>
+    {% empty %}
+        <div class="empty-state">
+            Aucune publication pour le moment.
+        </div>
+    {% endfor %}
+
+    {% if is_paginated %}
+        <nav aria-label="Pagination des publications">
+            <ul class="pagination-empd">
+                {% if page_obj.has_previous %}
+                    <li><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Précédent</a></li>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <li><a class="page-link" href="?page={{ page_obj.next_page_number }}">Suivant</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+
+</section>
+
 {% endblock %}

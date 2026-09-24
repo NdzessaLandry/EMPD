@@ -1,237 +1,172 @@
 {% extends "base.html" %}
 {% load static %}
+
 {% block title %}Accueil  EMPD{% endblock %}
 
 {% block content %}
 
-<!-- =====================================================
+<!-- =========================================================
      HERO
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="section-koi py-5">
-
+<section class="hero-empd">
     <div class="row align-items-center g-5">
 
         <div class="col-lg-7">
 
             <span class="eyebrow">
-                Étudier • Comprendre • Vivre
+                École Mondiale de la Parole de Dieu
             </span>
 
-            <h1 class="display-4 fw-bold mb-4">
-                Grandir dans la connaissance
-                de la Parole de Dieu.
+            <h1 class="hero-title">
+                Étudier la Parole.
+                <span>Comprendre la foi.</span>
+                Vivre l'Évangile.
             </h1>
 
-            <p class="lead text-koi-muted mb-4">
+            <p class="hero-text">
                 EMPD est un espace consacré à l'étude, à l'enseignement
-                et au partage de la Parole de Dieu. Nous mettons à
-                disposition des ressources destinées à accompagner
-                chacun dans sa compréhension des Écritures et dans sa
-                marche chrétienne.
+                et au partage de la Parole de Dieu. Découvrez des
+                enseignements, des publications et des ressources
+                destinés à accompagner votre cheminement dans la foi.
             </p>
 
-            <p class="text-koi-muted mb-4">
-                Notre conviction est simple : une foi qui grandit est
-                une foi qui cherche à comprendre, à apprendre et à mettre
-                en pratique ce qu'elle découvre dans les Écritures.
-            </p>
+            <div class="hero-actions">
 
-            <div class="d-flex flex-wrap gap-3">
-
-                <a
-                    href="{% url 'formations:liste' %}"
-                    class="btn btn-koi-primary"
-                >
-                    Découvrir les formations
+                <a href="{% url 'formations:liste' %}"
+                   class="btn btn-empd-primary">
+                    <i class="bi bi-book me-2"></i>
+                    Découvrir les enseignements
                 </a>
 
-                <a
-                    href="{% url 'publications:liste' %}"
-                    class="btn btn-koi-outline"
-                >
-                    Explorer les publications
+                <a href="{% url 'publications:liste' %}"
+                   class="btn btn-empd-outline">
+                    Voir les publications
                 </a>
 
             </div>
 
         </div>
-
-
-        <!-- Image principale -->
 
         <div class="col-lg-5">
 
-            <div class="image-frame-koi">
-
-                <!--
-                Remplacer cette URL par votre propre image
-                stockée dans static/images/
-                -->
+            <div class="hero-image-frame">
 
                 <img
                     src="{% static 'images/bible.jpg' %}"
-                    alt="Bible ouverte pendant un temps d'étude"
-                    class="image-koi"
+                    alt="Bible ouverte, éclairée d'une lumière douce"
+                    class="hero-image"
+                    loading="lazy"
                 >
 
+                <div class="hero-image-caption">
+                    <span>La Parole de Dieu</span>
+                    <small>Étudier · Comprendre · Vivre</small>
+                </div>
+
             </div>
 
         </div>
 
     </div>
+</section>
+
+
+<!-- =========================================================
+     VERSET
+     ========================================================= -->
+
+<section class="verse-section">
+
+    <div class="ornament-line"></div>
+
+    <span class="eyebrow">Notre fondement</span>
+
+    <blockquote>
+        « Ta parole est une lampe à mes pieds,
+        et une lumière sur mon sentier. »
+    </blockquote>
+
+    <p class="verse-reference">
+        Psaume 119:105
+    </p>
 
 </section>
 
 
-<!-- =====================================================
-     VERSET / PAROLE
-     ===================================================== -->
-
-<section class="section-koi">
-
-    <div class="row justify-content-center">
-
-        <div class="col-lg-9 text-center">
-
-            <span class="eyebrow">
-                Notre fondement
-            </span>
-
-            <h2 class="mb-4">
-                « Ta parole est une lampe à mes pieds,
-                et une lumière sur mon sentier. »
-            </h2>
-
-            <p class="text-koi-muted mb-0">
-                Psaume 119:105
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
+<!-- =========================================================
      MISSION
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="section-koi">
+<section class="section-empd">
 
-    <div class="row g-5 align-items-center">
+    <div class="row align-items-center g-5">
 
         <div class="col-lg-6">
 
-            <span class="eyebrow">
-                Notre mission
-            </span>
+            <span class="eyebrow">Notre mission</span>
 
-            <h2 class="mb-4">
-                Apprendre la Parole pour mieux la comprendre
-                et mieux la vivre.
+            <h2>
+                Une école pour apprendre,
+                approfondir et transmettre.
             </h2>
 
             <p>
-                La Bible est au cœur de notre démarche. EMPD souhaite
-                offrir un environnement dans lequel chacun peut prendre
-                le temps d'étudier les Écritures, de poser des questions,
-                d'approfondir sa compréhension et de progresser dans sa
-                connaissance de Dieu.
+                L'École Mondiale de la Parole de Dieu souhaite offrir
+                un environnement accessible à celles et ceux qui désirent
+                approfondir leur connaissance des Écritures.
             </p>
 
             <p>
-                Nous croyons que l'enseignement biblique ne devrait pas
-                être réservé à quelques personnes. Les ressources de
-                connaissance doivent pouvoir être accessibles au plus
-                grand nombre, indépendamment du niveau d'étude, de
-                l'expérience chrétienne ou des moyens financiers.
+                À travers des enseignements, des publications et différents
+                supports pédagogiques, EMPD cherche à favoriser une étude
+                attentive de la Bible et une compréhension plus approfondie
+                de son message.
             </p>
 
-            <p class="mb-0">
-                C'est pourquoi EMPD propose des formations, des
-                publications et différents supports pédagogiques destinés
-                à faciliter l'étude personnelle et collective de la
-                Parole de Dieu.
-            </p>
+            <a href="{% url 'core:a_propos' %}"
+               class="text-link">
+                Découvrir EMPD
+                <i class="bi bi-arrow-right"></i>
+            </a>
 
         </div>
 
-
         <div class="col-lg-6">
 
-            <div class="card card-koi p-4">
+            <div class="mission-card">
 
-                <div class="mb-4">
-                    <span class="eyebrow">
-                        Une démarche en trois étapes
-                    </span>
-
-                    <h3>
-                        Étudier. Comprendre. Mettre en pratique.
-                    </h3>
-                </div>
-
-
-                <div class="d-flex gap-3 mb-4">
-
-                    <div class="fs-4 fw-bold">
-                        01
-                    </div>
-
+                <div class="mission-step">
+                    <span>01</span>
                     <div>
-                        <h5 class="mb-1">
-                            Étudier
-                        </h5>
-
-                        <p class="mb-0">
-                            Prendre le temps de lire et d'examiner
-                            attentivement les textes bibliques.
+                        <h3>Étudier</h3>
+                        <p>
+                            Lire les Écritures avec attention et prendre
+                            le temps d'en approfondir le contenu.
                         </p>
                     </div>
-
                 </div>
 
-
-                <div class="d-flex gap-3 mb-4">
-
-                    <div class="fs-4 fw-bold">
-                        02
-                    </div>
-
+                <div class="mission-step">
+                    <span>02</span>
                     <div>
-                        <h5 class="mb-1">
-                            Comprendre
-                        </h5>
-
-                        <p class="mb-0">
-                            Chercher à comprendre le contexte, le sens
-                            et la portée de l'enseignement biblique.
+                        <h3>Comprendre</h3>
+                        <p>
+                            Approfondir le contexte, le sens et la portée
+                            des enseignements bibliques.
                         </p>
                     </div>
-
                 </div>
 
-
-                <div class="d-flex gap-3">
-
-                    <div class="fs-4 fw-bold">
-                        03
-                    </div>
-
+                <div class="mission-step">
+                    <span>03</span>
                     <div>
-                        <h5 class="mb-1">
-                            Mettre en pratique
-                        </h5>
-
-                        <p class="mb-0">
-                            Faire de la connaissance acquise un
-                            enseignement qui transforme notre manière
-                            de vivre.
+                        <h3>Vivre</h3>
+                        <p>
+                            Mettre en pratique les enseignements étudiés
+                            dans la vie quotidienne.
                         </p>
                     </div>
-
                 </div>
 
             </div>
@@ -243,26 +178,23 @@
 </section>
 
 
-<!-- =====================================================
+<!-- =========================================================
      RESSOURCES
-     ===================================================== -->
+     ========================================================= -->
 
-<section class="section-koi">
+<section class="section-empd section-soft">
 
-    <div class="text-center mb-5">
+    <div class="section-heading">
 
-        <span class="eyebrow">
-            Nos ressources
-        </span>
+        <span class="eyebrow">Explorer</span>
 
         <h2>
-            Des ressources pour approfondir votre étude
+            Des ressources pour votre cheminement
         </h2>
 
-        <p class="text-koi-muted mx-auto" style="max-width: 700px;">
-            Retrouvez des contenus conçus pour favoriser l'apprentissage,
-            la réflexion et l'approfondissement de votre connaissance
-            des Écritures.
+        <p>
+            Accédez simplement aux différents contenus proposés
+            par l'École Mondiale de la Parole de Dieu.
         </p>
 
     </div>
@@ -270,31 +202,29 @@
 
     <div class="row g-4">
 
-        <!-- Publications -->
+        <!-- PUBLICATIONS -->
 
         <div class="col-md-6">
 
-            <div class="card card-koi h-100 p-4">
+            <div class="resource-card">
 
-                <div class="fs-2 mb-3">
+                <div class="resource-icon">
                     <i class="bi bi-journal-text"></i>
                 </div>
 
-                <h3>
-                    Publications
-                </h3>
+                <span class="resource-number">01</span>
+
+                <h3>Publications</h3>
 
                 <p>
-                    Articles, études, réflexions et enseignements pour
-                    approfondir différents thèmes liés à la foi chrétienne
-                    et à la compréhension de la Parole de Dieu.
+                    Articles, études et réflexions destinés à approfondir
+                    différents thèmes liés aux Écritures et à la foi chrétienne.
                 </p>
 
-                <a
-                    href="{% url 'publications:liste' %}"
-                    class="btn btn-koi-outline mt-auto align-self-start"
-                >
-                    Consulter les publications
+                <a href="{% url 'publications:liste' %}"
+                   class="text-link">
+                    Explorer les publications
+                    <i class="bi bi-arrow-right"></i>
                 </a>
 
             </div>
@@ -302,31 +232,29 @@
         </div>
 
 
-        <!-- Formations -->
+        <!-- FORMATIONS -->
 
         <div class="col-md-6">
 
-            <div class="card card-koi h-100 p-4">
+            <div class="resource-card">
 
-                <div class="fs-2 mb-3">
+                <div class="resource-icon">
                     <i class="bi bi-mortarboard"></i>
                 </div>
 
-                <h3>
-                    Formations
-                </h3>
+                <span class="resource-number">02</span>
+
+                <h3>Enseignements</h3>
 
                 <p>
-                    Des supports pédagogiques sous différents formats
-                    pour apprendre progressivement, seul ou dans le cadre
-                    d'un groupe d'étude.
+                    Des supports pédagogiques pour étudier progressivement
+                    la Parole de Dieu, seul ou dans le cadre d'un groupe.
                 </p>
 
-                <a
-                    href="{% url 'formations:liste' %}"
-                    class="btn btn-koi-outline mt-auto align-self-start"
-                >
-                    Découvrir les formations
+                <a href="{% url 'formations:liste' %}"
+                   class="text-link">
+                    Découvrir les enseignements
+                    <i class="bi bi-arrow-right"></i>
                 </a>
 
             </div>
@@ -338,243 +266,74 @@
 </section>
 
 
-<!-- =====================================================
-     POURQUOI EMPD
-     ===================================================== -->
+<!-- =========================================================
+     PUBLICATIONS RÉCENTES
+     ========================================================= -->
 
-<section class="section-koi">
+<section class="section-empd">
 
-    <div class="row justify-content-center">
+    <div class="section-heading-row">
 
-        <div class="col-lg-9 text-center mb-5">
+        <div>
+            <span class="eyebrow">À découvrir</span>
 
-            <span class="eyebrow">
-                Pourquoi EMPD ?
-            </span>
-
-            <h2>
-                Une plateforme pensée pour apprendre et partager
+            <h2 class="mb-0">
+                Publications récentes
             </h2>
-
-            <p class="text-koi-muted">
-                Nous souhaitons créer un espace simple, accessible
-                et utile à toute personne désireuse d'approfondir
-                sa connaissance de la Parole de Dieu.
-            </p>
-
         </div>
+
+        <a href="{% url 'publications:liste' %}"
+           class="text-link">
+            Toutes les publications
+            <i class="bi bi-arrow-right"></i>
+        </a>
 
     </div>
 
 
     <div class="row g-4">
 
-        <div class="col-md-4">
-
-            <div class="card card-koi h-100 p-4">
-
-                <h4>
-                    Accessibilité
-                </h4>
-
-                <p class="mb-0">
-                    Les ressources sont pensées pour être accessibles
-                    au plus grand nombre et consultables depuis différents
-                    supports.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-4">
-
-            <div class="card card-koi h-100 p-4">
-
-                <h4>
-                    Formation
-                </h4>
-
-                <p class="mb-0">
-                    Notre objectif est de favoriser une compréhension
-                    progressive et structurée des enseignements proposés.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="col-md-4">
-
-            <div class="card card-koi h-100 p-4">
-
-                <h4>
-                    Partage
-                </h4>
-
-                <p class="mb-0">
-                    Une connaissance qui édifie peut être partagée.
-                    EMPD souhaite contribuer à la diffusion de ressources
-                    utiles à l'étude biblique.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     APPEL À L'ÉTUDE
-     ===================================================== -->
-
-<section class="section-koi">
-
-    <div class="row">
-
-        <div class="col-lg-10 mx-auto">
-
-            <div class="card card-koi p-4 p-lg-5 text-center">
-
-                <span class="eyebrow">
-                    Prenez le temps d'étudier
-                </span>
-
-                <h2 class="mb-4">
-                    La connaissance se construit dans la lecture,
-                    la réflexion et la mise en pratique.
-                </h2>
-
-                <p class="mx-auto text-koi-muted"
-                   style="max-width: 750px;">
-
-                    Chaque ressource proposée sur EMPD est une invitation
-                    à aller plus loin. Prenez le temps de lire, d'écouter,
-                    de réfléchir, de confronter les enseignements aux
-                    Écritures et de poursuivre votre cheminement.
-                    L'étude de la Parole est un processus qui demande
-                    patience, attention et persévérance.
-
-                </p>
-
-                <div class="mt-4">
-
-                    <a
-                        href="{% url 'formations:liste' %}"
-                        class="btn btn-koi-primary"
-                    >
-                        Commencer une formation
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     PUBLICATIONS RÉCENTES
-     ===================================================== -->
-
-<section class="section-koi">
-
-    <div class="d-flex justify-content-between
-                align-items-end flex-wrap gap-3 mb-4">
-
-        <div>
-
-            <span class="eyebrow">
-                À découvrir
-            </span>
-
-            <h2 class="mb-0">
-                Publications récentes
-            </h2>
-
-        </div>
-
-        <a
-            href="{% url 'publications:liste' %}"
-            class="btn btn-koi-outline btn-sm"
-        >
-            Voir toutes les publications
-        </a>
-
-    </div>
-
-
-    <div class="row">
-
         {% for pub in publications %}
 
-            <div class="col-lg-4 col-md-6 mb-4">
+        <div class="col-lg-4 col-md-6">
 
-                <article class="card card-koi h-100 p-4">
+            <article class="publication-card">
 
-                    <div class="small text-koi-muted mb-2">
+                <div class="publication-meta">
+                    {{ pub.date_creation|date:"d M Y" }}
 
-                        {{ pub.date_creation|date:"d M Y" }}
+                    {% if pub.auteur_nom %}
+                        · {{ pub.auteur_nom }}
+                    {% endif %}
+                </div>
 
-                        {% if pub.auteur_nom %}
-                            · {{ pub.auteur_nom }}
-                        {% endif %}
+                <h3>
+                    <a href="{% url 'publications:publication_detail' pub.pk %}">
+                        {{ pub.titre }}
+                    </a>
+                </h3>
 
-                    </div>
+                <p>
+                    {{ pub.contenu|truncatewords:28 }}
+                </p>
 
-                    <h4 class="mb-3">
+                <a href="{% url 'publications:publication_detail' pub.pk %}"
+                   class="text-link">
+                    Lire la suite
+                    <i class="bi bi-arrow-right"></i>
+                </a>
 
-                        <a
-                            href="{% url 'publications:publication_detail' pub.pk %}"
-                            class="text-decoration-none text-koi"
-                        >
-                            {{ pub.titre }}
-                        </a>
+            </article>
 
-                    </h4>
-
-                    <p>
-                        {{ pub.contenu|truncatewords:35 }}
-                    </p>
-
-                    <div class="mt-auto pt-3">
-
-                        <a
-                            href="{% url 'publications:publication_detail' pub.pk %}"
-                            class="btn btn-koi-outline btn-sm"
-                        >
-                            Lire la suite
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
+        </div>
 
         {% empty %}
 
-            <div class="col-12">
-
-                <div class="card card-koi p-4 text-center">
-
-                    <p class="mb-0 text-koi-muted">
-                        Les prochaines publications seront bientôt
-                        disponibles.
-                    </p>
-
-                </div>
-
+        <div class="col-12">
+            <div class="empty-state">
+                Les prochaines publications seront bientôt disponibles.
             </div>
+        </div>
 
         {% endfor %}
 
@@ -583,32 +342,26 @@
 </section>
 
 
-<!-- =====================================================
-     FORMATIONS
-     ===================================================== -->
+<!-- =========================================================
+     ENSEIGNEMENTS
+     ========================================================= -->
 
-<section class="section-koi">
+<section class="section-empd section-soft">
 
-    <div class="d-flex justify-content-between
-                align-items-end flex-wrap gap-3 mb-4">
+    <div class="section-heading-row">
 
         <div>
-
-            <span class="eyebrow">
-                Se former
-            </span>
+            <span class="eyebrow">Se former</span>
 
             <h2 class="mb-0">
-                Formations disponibles
+                Enseignements disponibles
             </h2>
-
         </div>
 
-        <a
-            href="{% url 'formations:liste' %}"
-            class="btn btn-koi-outline btn-sm"
-        >
-            Voir toutes les formations
+        <a href="{% url 'formations:liste' %}"
+           class="text-link">
+            Tous les enseignements
+            <i class="bi bi-arrow-right"></i>
         </a>
 
     </div>
@@ -618,62 +371,45 @@
 
         {% for f in formations %}
 
-            <div class="col-lg-6">
+        <div class="col-lg-6">
 
-                <div class="card card-koi p-3 h-100">
+            <article class="formation-card">
 
-                    <div class="d-flex
-                                justify-content-between
-                                align-items-center
-                                gap-3">
+                <div>
 
-                        <div>
+                    <span class="formation-type">
+                        {{ f.get_type_formation_display }}
+                    </span>
 
-                            <span class="badge badge-formation mb-2">
-                                {{ f.get_type_formation_display }}
-                            </span>
-
-                            <h5 class="mb-0">
-
-                                <a
-                                    href="{% url 'formations:formation_detail' f.pk %}"
-                                    class="text-decoration-none text-koi"
-                                >
-                                    {{ f.titre }}
-                                </a>
-
-                            </h5>
-
-                        </div>
-
-
-                        <a
-                            href="{% url 'formations:telecharger' f.pk %}"
-                            class="btn btn-koi-outline btn-sm"
-                            aria-label="Télécharger la formation"
-                        >
-                            <i class="bi bi-download"></i>
+                    <h3>
+                        <a href="{% url 'formations:formation_detail' f.pk %}">
+                            {{ f.titre }}
                         </a>
-
-                    </div>
+                    </h3>
 
                 </div>
 
-            </div>
+                <a href="{% url 'formations:telecharger' f.pk %}"
+                   class="download-button"
+                   aria-label="Télécharger l'enseignement">
+
+                    <i class="bi bi-download"></i>
+
+                </a>
+
+            </article>
+
+        </div>
 
         {% empty %}
 
-            <div class="col-12">
+        <div class="col-12">
 
-                <div class="card card-koi p-4 text-center">
-
-                    <p class="mb-0 text-koi-muted">
-                        Aucune formation n'est actuellement disponible.
-                    </p>
-
-                </div>
-
+            <div class="empty-state">
+                Aucun enseignement n'est actuellement disponible.
             </div>
+
+        </div>
 
         {% endfor %}
 
@@ -682,74 +418,56 @@
 </section>
 
 
-<!-- =====================================================
-     CONTRIBUTION
-     ===================================================== -->
+<!-- =========================================================
+     SOUTIEN
+     ========================================================= -->
 
-<section class="section-koi">
+<section class="section-empd">
 
-    <div class="row">
-
-        <div class="col-lg-10 mx-auto">
-
-            <div class="bandeau-contribution">
-
-                <span class="eyebrow">
-                    Soutenir la mission
-                </span>
-
-                <h3>
-                    Une œuvre fondée sur le partage
-                </h3>
-
-                <p class="mb-0">
-
-                    Les ressources proposées sur EMPD sont mises à
-                    disposition gratuitement. Si vous souhaitez contribuer
-                    à la poursuite de ce travail, votre soutien volontaire
-                    peut participer au développement de nouvelles
-                    formations, publications et ressources pédagogiques.
-
-                    <strong>
-                        La contribution reste libre et ne conditionne
-                        jamais l'accès aux ressources.
-                    </strong>
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CITATION FINALE
-     ===================================================== -->
-
-<section class="section-koi py-5">
-
-    <div class="text-center">
+    <div class="support-card">
 
         <span class="eyebrow">
-            Continuer à apprendre
+            Soutenir la mission
         </span>
 
-        <h2 class="mb-3">
-            « Efforce-toi de te présenter devant Dieu
-            comme un homme éprouvé. »
+        <h2>
+            Une œuvre fondée sur le partage.
         </h2>
 
-        <p class="text-koi-muted mb-0">
-            2 Timothée 2:15
+        <p>
+            Les ressources proposées sur EMPD sont mises à disposition
+            gratuitement. Si vous souhaitez soutenir le développement
+            de nouvelles formations et publications, votre contribution
+            volontaire peut participer à la poursuite de cette mission.
+        </p>
+
+        <p class="support-note">
+            La contribution reste libre et ne conditionne jamais
+            l'accès aux ressources.
         </p>
 
     </div>
 
 </section>
 
+
+<!-- =========================================================
+     CITATION FINALE
+     ========================================================= -->
+
+<section class="final-verse">
+
+    <div class="ornament-line"></div>
+
+    <blockquote>
+        « Cette bonne nouvelle du royaume sera prêchée dans le monde entier,
+        pour servir de témoignage à toutes les nations. »
+    </blockquote>
+
+    <p>
+        Matthieu 24:14
+    </p>
+
+</section>
 
 {% endblock %}
