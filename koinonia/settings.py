@@ -16,9 +16,10 @@ SECRET_KEY = os.environ.get(
     "django-insecure-2i3@z%@$dcbywy!r%f-mgbo%3t43)lqui^#s)@1m#-*z0u29)6",
 )
 
-DEBUG = os.environ.get("DJANGO_DEBUG", "True") == "True"
+DEBUG = os.environ.get("DJANGO_DEBUG", "False") == "False"
 
-ALLOWED_HOSTS = ['127.0.0.1','empd-a1gz.onrender.com','businesspartnership.pythonanywhere.com']
+ALLOWED_HOSTS = ["gswg.org", "www.gswg.org",'127.0.0.1','empd-a1gz.onrender.com','businesspartnership.pythonanywhere.com']
+CSRF_TRUSTED_ORIGINS = ["https://gswg.org", "https://www.gswg.org"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
