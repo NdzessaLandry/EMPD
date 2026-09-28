@@ -27,7 +27,8 @@
 
             <p class="hero-text">
                 {% blocktrans %}
-                EMPD est un espace consacré à l'étude, à l'enseignement
+                L'Ecole Mondiale de la Parole de Dieu (EMPD) est un espace 
+                consacré à l'étude, à l'enseignement
                 et au partage de la Parole de Dieu. Découvrez des
                 enseignements, des publications et des ressources
                 destinés à accompagner votre cheminement dans la foi.
@@ -86,12 +87,11 @@
     <span class="eyebrow">{% trans "Notre fondement" %}</span>
 
     <blockquote>
-        {% blocktrans %}« Ta parole est une lampe à mes pieds,
-        et une lumière sur mon sentier. »{% endblocktrans %}
+        {% blocktrans %}« Cette bonne nouvelle du royaume sera prêchée dans le monde entier, pour servir de témoignage à toutes les nations. »{% endblocktrans %}
     </blockquote>
 
     <p class="verse-reference">
-        {% trans "Psaume 119:105" %}
+        {% trans "Matthieu 24:14" %}
     </p>
 
 </section>
@@ -184,247 +184,6 @@
 
 </section>
 
-
-<!-- =========================================================
-     RESSOURCES
-     ========================================================= -->
-
-<section class="section-empd section-soft">
-
-    <div class="section-heading">
-
-        <span class="eyebrow">{% trans "Explorer" %}</span>
-
-        <h2>
-            {% trans "Des ressources pour votre cheminement" %}
-        </h2>
-
-        <p>
-            {% blocktrans %}Accédez simplement aux différents contenus proposés
-            par l'École Mondiale de la Parole de Dieu.{% endblocktrans %}
-        </p>
-
-    </div>
-
-
-    <div class="row g-4">
-
-        <!-- PUBLICATIONS -->
-
-        <div class="col-md-6">
-
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    <i class="bi bi-journal-text"></i>
-                </div>
-
-                <span class="resource-number">01</span>
-
-                <h3>{% trans "Publications" %}</h3>
-
-                <p>
-                    {% blocktrans %}Articles, études et réflexions destinés à approfondir
-                    différents thèmes liés aux Écritures et à la foi chrétienne.{% endblocktrans %}
-                </p>
-
-                <a href="{% url 'publications:liste' %}"
-                   class="text-link">
-                    {% trans "Explorer les publications" %}
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- FORMATIONS -->
-
-        <div class="col-md-6">
-
-            <div class="resource-card">
-
-                <div class="resource-icon">
-                    <i class="bi bi-mortarboard"></i>
-                </div>
-
-                <span class="resource-number">02</span>
-
-                <h3>{% trans "Enseignements" %}</h3>
-
-                <p>
-                    {% blocktrans %}Des supports pédagogiques pour étudier progressivement
-                    la Parole de Dieu, seul ou dans le cadre d'un groupe.{% endblocktrans %}
-                </p>
-
-                <a href="{% url 'formations:liste' %}"
-                   class="text-link">
-                    {% trans "Découvrir les enseignements" %}
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     PUBLICATIONS RÉCENTES
-     ========================================================= -->
-
-<section class="section-empd">
-
-    <div class="section-heading-row">
-
-        <div>
-            <span class="eyebrow">{% trans "À découvrir" %}</span>
-
-            <h2 class="mb-0">
-                {% trans "Publications récentes" %}
-            </h2>
-        </div>
-
-        <a href="{% url 'publications:liste' %}"
-           class="text-link">
-            {% trans "Toutes les publications" %}
-            <i class="bi bi-arrow-right"></i>
-        </a>
-
-    </div>
-
-
-    <div class="row g-4">
-
-        {% for pub in publications %}
-
-        <div class="col-lg-4 col-md-6">
-
-            <article class="publication-card">
-
-                <div class="publication-meta">
-                    {{ pub.date_creation|date:"d M Y" }}
-
-                    {% if pub.auteur_nom %}
-                        · {{ pub.auteur_nom }}
-                    {% endif %}
-                </div>
-
-                <h3>
-                    <a href="{% url 'publications:publication_detail' pub.pk %}">
-                        {{ pub.titre }}
-                    </a>
-                </h3>
-
-                <p>
-                    {{ pub.contenu|truncatewords:28 }}
-                </p>
-
-                <a href="{% url 'publications:publication_detail' pub.pk %}"
-                   class="text-link">
-                    {% trans "Lire la suite" %}
-                    <i class="bi bi-arrow-right"></i>
-                </a>
-
-            </article>
-
-        </div>
-
-        {% empty %}
-
-        <div class="col-12">
-            <div class="empty-state">
-                {% trans "Les prochaines publications seront bientôt disponibles." %}
-            </div>
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-
-<!-- =========================================================
-     ENSEIGNEMENTS
-     ========================================================= -->
-
-<section class="section-empd section-soft">
-
-    <div class="section-heading-row">
-
-        <div>
-            <span class="eyebrow">{% trans "Se former" %}</span>
-
-            <h2 class="mb-0">
-                {% trans "Enseignements disponibles" %}
-            </h2>
-        </div>
-
-        <a href="{% url 'formations:liste' %}"
-           class="text-link">
-            {% trans "Tous les enseignements" %}
-            <i class="bi bi-arrow-right"></i>
-        </a>
-
-    </div>
-
-
-    <div class="row g-3">
-
-        {% for f in formations %}
-
-        <div class="col-lg-6">
-
-            <article class="formation-card">
-
-                <div>
-
-                    <span class="formation-type">
-                        {{ f.get_type_formation_display }}
-                    </span>
-
-                    <h3>
-                        <a href="{% url 'formations:formation_detail' f.pk %}">
-                            {{ f.titre }}
-                        </a>
-                    </h3>
-
-                </div>
-
-                <a href="{% url 'formations:telecharger' f.pk %}"
-                   class="download-button"
-                   aria-label="{% trans "Télécharger l'enseignement" %}">
-
-                    <i class="bi bi-download"></i>
-
-                </a>
-
-            </article>
-
-        </div>
-
-        {% empty %}
-
-        <div class="col-12">
-
-            <div class="empty-state">
-                {% trans "Aucun enseignement n'est actuellement disponible." %}
-            </div>
-
-        </div>
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-
 <!-- =========================================================
      SOUTIEN
      ========================================================= -->
@@ -452,30 +211,10 @@
 
         <p class="support-note">
             {% blocktrans %}La contribution reste libre et ne conditionne jamais
-            l'accès aux ressources.{% endblocktrans %}
+            l'accès aux ressources. Vous pouvez nous contacter à l'adresse mendopaulin@gswg.org{% endblocktrans %}
         </p>
 
     </div>
-
-</section>
-
-
-<!-- =========================================================
-     CITATION FINALE
-     ========================================================= -->
-
-<section class="final-verse">
-
-    <div class="ornament-line"></div>
-
-    <blockquote>
-        {% blocktrans %}« Cette bonne nouvelle du royaume sera prêchée dans le monde entier,
-        pour servir de témoignage à toutes les nations. »{% endblocktrans %}
-    </blockquote>
-
-    <p>
-        {% trans "Matthieu 24:14" %}
-    </p>
 
 </section>
 

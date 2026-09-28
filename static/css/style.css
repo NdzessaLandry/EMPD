@@ -1,24 +1,29 @@
 /* =========================================================
    EMPD — Design System
-   Palette : vitrail clair (ivoire / violet liturgique / rose / sauge)
+   Palette : vitrail clair (blanc lavande / violet liturgique / rose / sauge)
+   Aucun ton jaune ou crème : fonds neutres légèrement froids.
    ========================================================= */
 
 :root {
-    --empd-ivoire: #faf6ef;
-    --empd-ivoire-soft: #fffdfa;
-    --empd-lin: #f1e9db;
-    --empd-encre: #3d372f;
-    --empd-encre-douce: #6f6558;
-    --empd-encre-pale: #9a9184;
+    /* Fonds */
+    --empd-ivoire: #f8f7fb;        /* fond principal (blanc lavande) */
+    --empd-ivoire-soft: #ffffff;   /* cartes */
+    --empd-lin: #efedf5;           /* sections alternées, footer */
 
+    /* Texte (gris-violet neutre, plus de brun chaud) */
+    --empd-encre: #322f3a;
+    --empd-encre-douce: #625d6c;
+    --empd-encre-pale: #7b7686;
+
+    /* Accents */
     --empd-violet: #7c6ba0;
-    --empd-violet-soft: #ece7f3;
+    --empd-violet-soft: #ebe6f4;
     --empd-rose: #c68a9c;
     --empd-rose-soft: #f6ebee;
     --empd-sauge: #7f9a7c;
-    --empd-sauge-soft: #edf2ea;
+    --empd-sauge-soft: #ecf2ee;
 
-    --empd-border: #e6dccb;
+    --empd-border: #e3e0ea;
 
     --radius-sm: 8px;
     --radius-md: 14px;
@@ -35,11 +40,14 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 
     background-color: var(--empd-ivoire);
     color: var(--empd-encre);
@@ -50,6 +58,11 @@ body {
 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+}
+
+img,
+video {
+    max-width: 100%;
 }
 
 
@@ -69,10 +82,11 @@ blockquote {
     color: var(--empd-encre);
     font-weight: 600;
     letter-spacing: -0.01em;
+    overflow-wrap: break-word;
 }
 
 h1 {
-    font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+    font-size: clamp(2rem, 4.2vw, 3.4rem);
     line-height: 1.18;
     font-weight: 600;
 }
@@ -84,7 +98,7 @@ h1 span {
 }
 
 h2 {
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    font-size: clamp(1.65rem, 3vw, 2.3rem);
     line-height: 1.25;
     max-width: 22ch;
 }
@@ -97,6 +111,7 @@ h3 {
 p {
     color: var(--empd-encre-douce);
     max-width: 62ch;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -109,9 +124,23 @@ a:hover {
     color: var(--empd-violet);
 }
 
+/* Dans les blocs centrés, les éléments à largeur limitée
+   doivent eux-mêmes être centrés (sinon le texte paraît décalé) */
+.section-heading h2,
+.section-heading p,
+.page-header h1,
+.page-header p,
+.support-card h2,
+.support-card p,
+.verse-section p,
+.final-verse p,
+.verse-section blockquote,
+.final-verse blockquote {
+    margin-left: auto;
+    margin-right: auto;
+}
 
-/* Petit texte d'introduction : plus de MAJUSCULES forcées,
-   on préfère une touche italique + couleur pour signaler la section */
+/* Petit texte d'introduction : italique + couleur, pas de MAJUSCULES forcées */
 .eyebrow {
     display: inline-block;
     margin-bottom: 0.6rem;
@@ -133,7 +162,7 @@ a:hover {
     top: 0;
     z-index: 1030;
 
-    background: rgba(250, 246, 239, 0.94);
+    background: rgba(248, 247, 251, 0.94);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
@@ -276,8 +305,8 @@ main.container {
 
     padding: 1.5rem 1.5rem 1.2rem;
 
-    background: linear-gradient(to top, rgba(61, 55, 47, 0.55), transparent);
-    color: var(--empd-ivoire-soft);
+    background: linear-gradient(to top, rgba(50, 47, 58, 0.6), transparent);
+    color: #ffffff;
 }
 
 .hero-image-caption span {
@@ -288,7 +317,7 @@ main.container {
 }
 
 .hero-image-caption small {
-    opacity: 0.85;
+    opacity: 0.9;
     letter-spacing: 0.03em;
 }
 
@@ -316,13 +345,13 @@ main.container {
 .btn-empd-primary {
     background-color: var(--empd-violet);
     border: 1px solid var(--empd-violet);
-    color: var(--empd-ivoire-soft);
+    color: #ffffff;
 }
 
 .btn-empd-primary:hover {
     background-color: #6a5b8c;
     border-color: #6a5b8c;
-    color: var(--empd-ivoire-soft);
+    color: #ffffff;
 }
 
 .btn-empd-outline {
@@ -377,12 +406,13 @@ main.container {
 
 .verse-section blockquote,
 .final-verse blockquote {
-    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
     font-style: italic;
     font-weight: 500;
     line-height: 1.5;
     color: var(--empd-encre);
-    margin: 0.8rem 0 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .verse-reference,
@@ -479,7 +509,6 @@ main.container {
     transition: border-color var(--transition);
 }
 
-.resource-card:nth-of-type(2),
 .col-md-6:nth-child(2) .resource-card {
     border-top-color: var(--empd-sauge);
 }
@@ -512,7 +541,7 @@ main.container {
 
 
 /* =========================================================
-   PUBLICATIONS / FORMATIONS
+   PUBLICATIONS / FORMATIONS (cartes de l'accueil)
    ========================================================= */
 
 .publication-card {
@@ -576,8 +605,8 @@ main.container {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
 
     background-color: var(--empd-sauge-soft);
     color: var(--empd-sauge);
@@ -588,7 +617,7 @@ main.container {
 
 .download-button:hover {
     background-color: var(--empd-sauge);
-    color: var(--empd-ivoire-soft);
+    color: #ffffff;
 }
 
 .empty-state {
@@ -662,7 +691,7 @@ main.container {
 .filter-pill.active {
     background-color: var(--empd-violet);
     border-color: var(--empd-violet);
-    color: var(--empd-ivoire-soft);
+    color: #ffffff;
 }
 
 
@@ -715,6 +744,7 @@ main.container {
 
 .formation-grid-card .formation-actions {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.6rem;
     margin-top: 0.8rem;
@@ -760,6 +790,7 @@ main.container {
 
 .pagination-empd {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 0.6rem;
     margin-top: 2.5rem;
@@ -770,6 +801,7 @@ main.container {
 .pagination-empd .page-link {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
     padding: 0.55rem 1.1rem;
 
     background-color: var(--empd-ivoire-soft);
@@ -790,7 +822,7 @@ main.container {
 
 
 /* =========================================================
-   PAGES INTÉRIEURES (À propos, etc.)
+   PAGES INTÉRIEURES (À propos, détails...)
    ========================================================= */
 
 .page-header {
@@ -850,7 +882,7 @@ main.container {
 
 
 /* =========================================================
-   FORMULAIRES (repris pour cohérence)
+   FORMULAIRES
    ========================================================= */
 
 .form-control,
@@ -905,6 +937,7 @@ main.container {
 
 .footer-empd p {
     color: var(--empd-encre-douce);
+    max-width: none;
 }
 
 .footer-empd .border-koi {
@@ -946,21 +979,79 @@ button:focus-visible,
 
 /* =========================================================
    RESPONSIVE
+   Points de rupture (ceux de Bootstrap) :
+   ≤1199 : petits ordinateurs / tablettes paysage
+   ≤991  : tablettes (menu replié)
+   ≤767  : grands téléphones / tablettes portrait
+   ≤575  : téléphones
+   ≤399  : très petits écrans
    ========================================================= */
 
+/* ---------- Petits ordinateurs ---------- */
+@media (max-width: 1199.98px) {
+    .section-empd {
+        padding: 3.5rem 0;
+    }
+
+    .section-soft {
+        padding: 3.5rem 1.25rem;
+    }
+}
+
+
+/* ---------- Tablettes (menu replié) ---------- */
 @media (max-width: 991.98px) {
+
     .navbar-empd {
         min-height: 68px;
     }
 
+    /* Panneau du menu déplié */
+    .navbar-empd .navbar-collapse {
+        margin-top: 0.5rem;
+        padding: 0.5rem 0 1rem;
+        border-top: 1px solid var(--empd-border);
+    }
+
+    .navbar-empd .navbar-nav {
+        gap: 0.15rem;
+        align-items: stretch !important;
+    }
+
+    .navbar-empd .nav-link {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0.7rem 0.8rem !important;
+    }
+
+    .navbar-empd .nav-link.active::after {
+        display: none;
+    }
+
+    /* Sélecteur de langue pleine largeur dans le menu */
+    .navbar-empd .nav-item form {
+        display: block !important;
+        margin: 0.6rem 0 0 !important;
+    }
+
+    .navbar-empd .form-select {
+        width: 100% !important;
+        min-height: 44px;
+        font-size: 0.95rem;
+    }
+
+    /* Hero */
     .hero-empd {
         padding: 2rem 0 3rem;
     }
 
     .hero-image-frame {
-        margin-top: 1.5rem;
+        max-width: 420px;
+        margin: 1.5rem auto 0;
     }
 
+    /* Sections */
     .section-empd {
         padding: 3rem 0;
     }
@@ -971,26 +1062,238 @@ button:focus-visible,
     }
 
     .support-card {
-        padding: 2rem 1.4rem;
+        padding: 2.2rem 1.6rem;
+    }
+
+    .footer-empd {
+        margin-top: 4rem;
     }
 }
 
+
+/* ---------- Grands téléphones / tablettes portrait ---------- */
+@media (max-width: 767.98px) {
+
+    .verse-section,
+    .final-verse {
+        padding: 2.5rem 0.5rem;
+    }
+
+    .section-heading {
+        margin-bottom: 2rem;
+    }
+
+    .section-heading-row {
+        margin-bottom: 1.6rem;
+    }
+
+    .content-card {
+        padding: 1.8rem;
+    }
+
+    .publication-row {
+        padding: 1.4rem;
+    }
+
+    .publication-row img {
+        max-height: 220px;
+    }
+
+    .resource-card {
+        padding: 1.6rem;
+    }
+
+    .resource-number {
+        top: 1.4rem;
+        right: 1.4rem;
+    }
+
+    .page-header {
+        margin-bottom: 2rem;
+    }
+}
+
+
+/* ---------- Téléphones ---------- */
 @media (max-width: 575.98px) {
+
     body {
         font-size: 15px;
+    }
+
+    main.container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-empd .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+
+    .navbar-empd .navbar-brand img {
+        height: 30px !important;
+        margin-right: 8px !important;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero-empd {
+        padding: 1.2rem 0 2.2rem;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.7rem;
     }
 
     .hero-actions .btn {
         width: 100%;
         justify-content: center;
+        min-height: 46px;
+    }
+
+    .hero-image-frame {
+        max-width: 100%;
+    }
+
+    .hero-image {
+        aspect-ratio: 4 / 5;
+    }
+
+    /* Sections */
+    .section-empd {
+        padding: 2.4rem 0;
+    }
+
+    .section-soft {
+        padding: 2.4rem 1rem;
+        border-radius: var(--radius-md);
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+    }
+
+    .section-heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    /* Mission */
+    .mission-card {
+        gap: 1rem;
+    }
+
+    .mission-step {
+        gap: 0.9rem;
+        padding: 1.1rem;
+    }
+
+    .mission-step span {
+        font-size: 1.35rem;
+    }
+
+    /* Cartes */
+    .resource-card {
+        padding: 1.4rem;
+    }
+
+    .publication-card {
+        padding: 1.3rem;
     }
 
     .formation-card {
+        padding: 1rem 1.1rem;
+    }
+
+    .formation-grid-card .formation-thumb {
+        height: 190px;
+    }
+
+    .formation-grid-card .formation-body {
+        padding: 1.2rem;
+    }
+
+    .formation-grid-card .formation-actions {
         flex-direction: column;
-        align-items: flex-start;
+    }
+
+    .formation-grid-card .formation-actions .btn {
+        width: 100%;
+        min-height: 44px;
+    }
+
+    /* Filtres : défilement horizontal plutôt que plusieurs lignes */
+    .filter-bar {
+        flex-wrap: nowrap;
+        justify-content: flex-start !important;
+        overflow-x: auto;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding: 0.2rem 1rem 0.6rem;
+        scrollbar-width: none;
+    }
+
+    .filter-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-pill {
+        flex-shrink: 0;
+        min-height: 40px;
+        white-space: nowrap;
+    }
+
+    /* Pages de détail / à propos */
+    .content-card {
+        padding: 1.4rem;
+    }
+
+    .content-card .btn {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+    }
+
+    .support-card {
+        padding: 1.8rem 1.2rem;
+    }
+
+    /* Pagination */
+    .pagination-empd .page-link {
+        padding: 0.5rem 0.9rem;
     }
 
     .footer-empd {
         margin-top: 3rem;
+    }
+}
+
+
+/* ---------- Très petits écrans ---------- */
+@media (max-width: 399.98px) {
+
+    h1 {
+        font-size: 1.85rem;
+    }
+
+    h2 {
+        font-size: 1.55rem;
+    }
+
+    .content-card,
+    .support-card {
+        padding: 1.2rem 1rem;
+    }
+
+    .hero-image-caption {
+        padding: 1rem 1rem 0.9rem;
     }
 }
