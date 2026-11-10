@@ -1,38 +1,75 @@
 {% extends "base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "À propos" %}  EMPD{% endblock %}
+{% block title %}{% trans "À propos" %} EMPD{% endblock %}
 
 {% block content %}
 
 <section class="section-empd">
 
+    <!-- En-tête de la page -->
     <div class="page-header">
         <span class="eyebrow">{% trans "Qui sommes-nous" %}</span>
         <h1>{% trans "À propos d'EMPD" %}</h1>
         <p class="lead">
-            {% blocktrans %}Un espace de partage et de formation, pensé pour accompagner
-            chacun dans son cheminement de foi.{% endblocktrans %}
+            {% blocktrans trimmed %}
+                Un espace de partage et de formation, pensé pour accompagner
+                chacun dans son cheminement de foi.
+            {% endblocktrans %}
         </p>
     </div>
 
-    <div class="content-card">
+    <div class="row g-4">
 
-        <p>
-            {% blocktrans %}
-            L'EMPD est un espace de partage et de formation, mis à disposition
-            gratuitement pour accompagner chacun dans son cheminement. Nos
-            contenus (vidéos, enregistrements audio, documents PDF) sont
-            proposés librement, sans condition d'inscription ni de paiement.
-            L'enseignant, évangéliste et prédicateur Mendo Paulin est le promoteur de cette plateforme.
-            {% endblocktrans %}
-        </p>
-        <p>
-            {% blocktrans %}
-            Passioné par le partage de la parole de Dieu, son but principal 
-            est d'équiper les croyants de la connaissance biblique nécessaire pour accomplir leur mission divine.
-            {% endblocktrans %}
-        </p>
+        <!-- Colonne gauche : présentation -->
+        <div class="col-lg-7">
+            <div class="content-card h-100">
+                <p>
+                    {% blocktrans trimmed %}
+                        L'EMPD est un espace de partage et de formation, mis à
+                        disposition gratuitement pour accompagner chacun dans son
+                        cheminement. Nos contenus (vidéos, enregistrements audio,
+                        documents PDF) sont proposés librement, sans condition
+                        d'inscription ni de paiement. L'enseignant, évangéliste et
+                        prédicateur Mendo Paulin est le promoteur de cette plateforme.
+                    {% endblocktrans %}
+                </p>
+                <p class="mb-0">
+                    {% blocktrans trimmed %}
+                        Passionné par le partage de la parole de Dieu, son but
+                        principal est d'équiper les croyants de la connaissance
+                        biblique nécessaire pour accomplir leur mission divine.
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+
+        <!-- Colonne droite : soutien -->
+        <div class="col-lg-5">
+            <div class="support-card h-100">
+                <span class="eyebrow">{% trans "Soutenir la mission" %}</span>
+                <h2>{% trans "Une œuvre fondée sur le partage." %}</h2>
+
+                <p>
+                    {% blocktrans trimmed %}
+                        Les ressources proposées sur EMPD sont mises à disposition
+                        gratuitement. Si vous souhaitez soutenir le développement
+                        de nouvelles formations et publications, votre contribution
+                        volontaire peut participer à la poursuite de cette mission.
+                    {% endblocktrans %}
+                </p>
+
+                <p class="support-note mb-0">
+                    {% blocktrans trimmed %}
+                        La contribution reste libre et ne conditionne jamais
+                        l'accès aux ressources.
+                    {% endblocktrans %}
+                    <br>
+                    {% trans "Contact :" %}
+                    <a href="mailto:mendopaulin@gswg.org">mendopaulin@gswg.org</a>
+                </p>
+            </div>
+        </div>
 
     </div>
 

@@ -187,35 +187,40 @@
 <!-- =========================================================
      SOUTIEN
      ========================================================= -->
+<section>
+    <div class="row">
+  <div class="col-lg-7">
+    <h2 class="mb-3">Publications récentes</h2>
 
-<section class="section-empd">
+    {% for pub in publications %}
+      <div class="card card-koi mb-3 p-3">
+        <div class="small text-muted mb-1">
+          {{ pub.date_creation|date:"d M Y" }} — {{ pub.auteur_nom }}
+        </div>
 
-    <div class="support-card">
+        <h5>
+          <a href="{% url 'publications:publication_detail' pub.pk %}"
+             class="text-decoration-none text-dark">
+            {{ pub.titre }}
+          </a>
+        </h5>
 
-        <span class="eyebrow">
-            {% trans "Soutenir la mission" %}
-        </span>
+        <p class="mb-1">{{ pub.contenu|truncatewords:30 }}</p>
 
-        <h2>
-            {% trans "Une œuvre fondée sur le partage." %}
-        </h2>
+        <a href="{% url 'publications:publication_detail' pub.pk %}"
+           class="btn btn-koi-outline btn-sm align-self-start">
+          Lire la suite
+        </a>
+      </div>
+    {% empty %}
+      <p class="text-muted">Aucune publication pour le moment.</p>
+    {% endfor %}
 
-        <p>
-            {% blocktrans %}
-            Les ressources proposées sur EMPD sont mises à disposition
-            gratuitement. Si vous souhaitez soutenir le développement
-            de nouvelles formations et publications, votre contribution
-            volontaire peut participer à la poursuite de cette mission.
-            {% endblocktrans %}
-        </p>
-
-        <p class="support-note">
-            {% blocktrans %}La contribution reste libre et ne conditionne jamais
-            l'accès aux ressources. Vous pouvez nous contacter à l'adresse mendopaulin@gswg.org{% endblocktrans %}
-        </p>
-
-    </div>
-
+    <a href="{% url 'publications:liste' %}" class="btn btn-koi-primary btn-sm">
+      Voir toutes les publications
+    </a>
+  </div>
 </section>
+
 
 {% endblock %}
