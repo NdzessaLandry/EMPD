@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
-
+{% load humanize %}
 {% block title %}{% trans "Enseignements" %} EMPD{% endblock %}
 
 {% block content %}
@@ -46,12 +46,17 @@
                         <p>{{ f.description|truncatewords:18 }}</p>
 
                         <div class="formation-actions">
-                            <a href="{% url 'formations:formation_detail' f.pk %}" class="btn btn-empd-outline btn-sm">
-                                {% trans "Voir" %}
+                            
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="{% url 'formations:formation_detail' f.pk %}" class="btn btn-koi-outline btn-sm">Voir</a>
+                             {% if f.est_gratuite %}
+                            <a href="{% url 'formations:telecharger' f.pk %}" class="btn btn-koi-primary btn-sm">
+                                  <i class="bi bi-download"></i> Télécharger
                             </a>
-                            <a href="{% url 'formations:telecharger' f.pk %}" class="btn btn-empd-primary btn-sm">
-                                <i class="bi bi-download"></i> {% trans "Télécharger" %}
-                            </a>
+                            {% else %}
+                            <span class="fw-bold">{{ f.prix|intcomma }} FCFA</span>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
 

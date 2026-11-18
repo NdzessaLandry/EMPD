@@ -11,7 +11,9 @@ class CategorieAdmin(admin.ModelAdmin):
 
 @admin.register(Formation)
 class FormationAdmin(admin.ModelAdmin):
-    """Ajout et suppression de formations gérés nativement par l'admin Django."""
-    list_display = ("titre", "type_formation", "categorie", "active", "date_publication")
-    list_filter = ("type_formation", "active", "categorie")
+    list_display = ("titre", "type_formation", "type_acces", "prix", "categorie", "active")
+    list_filter = ("type_formation", "type_acces", "active", "categorie")
     search_fields = ("titre", "description")
+
+    class Media:
+        js = ("formations/admin_prix.js",)

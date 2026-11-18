@@ -1,7 +1,7 @@
 from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import DetailView, ListView
-
+from django.contrib import messages
 from .models import Formation
 
 
@@ -33,6 +33,9 @@ class FormationDetailView(DetailView):
 def telecharger_formation(request, pk):
     """Téléchargement libre, sans compte ni paiement."""
     formation = get_object_or_404(Formation, pk=pk, active=True)
+    if not formation.est_gratuite:
+        messages.warning(request, "Cette formation est payante : contactez-nous pour y accéder.")
+        return redirect("formations:formation_detail", pk=pk)
     if formation.lien_externe:
         return redirect(formation.lien_externe)
     if formation.fichier:

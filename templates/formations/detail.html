@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load humanize %}
 
 {% block title %}{{ formation.titre }}  EMPD{% endblock %}
 
@@ -25,10 +26,16 @@
 
         <p style="white-space: pre-line;">{{ formation.description }}</p>
 
-        <a href="{% url 'formations:telecharger' formation.pk %}"
-           class="btn btn-empd-primary mt-2">
-            <i class="bi bi-download"></i> {% trans "Télécharger" %}
-        </a>
+        {% if formation.est_gratuite %}
+        
+        <i class="bi bi-download"></i> Télécharger gratuitement
+            </a>
+{% else %}
+  <p class="fw-bold fs-5 mt-2 mb-1">{{ formation.prix|intcomma }} FCFA</p>
+  <p class="text-muted small">
+    Cette formation est payante. Contactez-nous pour y accéder.
+  </p>
+{% endif %}
 
     </div>
 
